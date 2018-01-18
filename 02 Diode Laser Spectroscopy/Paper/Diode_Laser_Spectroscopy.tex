@@ -1,0 +1,84 @@
+% General Paper Template created by Adam Green
+% Last revised 1/09/18
+
+\documentclass[12pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standard packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage[margin = 2cm]{geometry}
+%\usepackage{siunitx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphical packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{tikz}
+%\usepackage{tikz-3dplot}
+%\usepackage{pgfplots}
+
+%\graphicspath{{figures/}} % set directory for figures
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table and Array packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tabu}
+\usepackage{xcolor}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Citation packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\hypersetup{citebordercolor = {0 0.75 0.75}, linkbordercolor = {0 0.75 0.75} }
+%\usepackage{cleveref}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Text Formatting packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multicol}
+\usepackage{parskip} 
+\usepackage{indentfirst} 
+%	\setlength{\parindent}{2cm}
+\usepackage{fancyhdr}
+%	\pagestyle{fancy}
+\usepackage{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\red}[1]{\textbf{\textcolor{red}{#1}}} % My standard commenting style
+\newcommand{\scap}[1]{\textsc{\MakeLowercase{#1}}} % Makes caps small so it doesnt SHOUT
+
+% Math commands, first and second order partials, Laplacian
+\newcommand{\evaluate}{\Bigr\rvert}
+\newcommand{\ppd}[1]{\frac{\partial}{\partial#1}}
+\newcommand{\ppsd}[1]{\frac{\partial^2}{\partial #1^2}}
+\newcommand{\ppnd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ppsnd}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\lap}{\nabla^2}
+
+% Quantum bra- ket- commands
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bracket}[2]{\langle #1 | #2 \rangle}
+
+% Redfine equation and figure references to include "Eqn. ()" and "Fig. _"
+\newcommand{\figref}[1]{Fig.\ \ref{#1}}
+\let\originaleqref=\eqref
+\renewcommand{\eqref}{Eqn.\ \originaleqref}
+
+
+% Custom matrix spacing
+% Syntax: \begin{matrix}[scale]
+\makeatletter
+\renewcommand*\env@matrix[1][\arraystretch]{%
+	\edef\arraystretch{#1}%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{*\c@MaxMatrixCols c}}
+\makeatother
