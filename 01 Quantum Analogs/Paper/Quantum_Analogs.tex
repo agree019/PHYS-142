@@ -83,7 +83,42 @@
 	\array{*\c@MaxMatrixCols c}}
 \makeatother
 
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+\newenvironment{institutions}[1][2em]{\begin{list}{}{\setlength\leftmargin{#1}\setlength\rightmargin{#1}}\item[]}{\end{list}}
+
 
 \begin{document}
-	Here are words and a compilation.
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title
+%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+\begin{center}
+
+	{\huge \bf Quantum Analogs}
+	
+	\vskip .7cm
+	
+	\textbf{Adam Green}\\
+	\texttt{\footnotesize \email{agree019@ucr.edu}}
+	
+%	\vspace{-1em}
+	\begin{institutions}[2.25cm]
+		\footnotesize
+		{\it 
+			Department of Physics \& Astronomy, 
+			University of  California, Riverside, 
+			{CA} 92521	    
+		}    
+	\end{institutions}
+	
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+
+\begin{abstract}
+		content...
+\end{abstract}
+
 \end{document}
