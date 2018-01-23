@@ -55,7 +55,9 @@
 \newcommand{\red}[1]{\textbf{\textcolor{red}{#1}}} % My standard commenting style
 \newcommand{\scap}[1]{\textsc{\MakeLowercase{#1}}} % Makes caps small so it doesnt SHOUT
 
-%\newcommand{\unit}[1]{$$}
+
+\renewcommand{\deg}{^\circ}
+
 
 % Math commands, first and second order partials, Laplacian
 \newcommand{\evaluate}{\Bigr\rvert}
@@ -132,9 +134,26 @@ Abstract Things
 \end{abstract}
 	
 	\section{Introduction}
+	\red{What the Schrodinger equation does}
+	
+	\red{Why it is analgous to sound waves}
+	
+	\red{What we do in this experiment}
 	
 	\section{Experimental Procedure}
 	
+		\subsection{Acoustic Resonances of the Spherical Cavity}
+		
+			\subsubsection{Finding Resonant Frequencies}
+			We set the angle $\alpha = 180 \deg$ and begin sweeping the frequency from $1$ Hz to $\approx 8$ kHz in increments of $10$ Hz. We use $10$ Hz increments simply to find the neighborhood of a resonance. On the oscilloscope, a resonance will appear as in increase in the amplitude of the signal orders of magnitude larger than the characteristic scale. Near a resonance, we fine tune the frequency in increments of $1$ Hz until the amplitude has been maximized. It is important to note that due to the resolution of the oscilloscope, using denominations smaller than $1$ Hz were not discernible.
+			
+			\subsubsection{Mapping out Polar Angle Dependence at Resonance}
+			Once we determined all the resonant frequencies, we began mapping out the angular dependence at each resonance. To begin, we set the angle on the cavity to $\alpha = 180 \deg$ and make note of the amplitude. We then decrease $\alpha$ from $180 \deg$ to $0 \deg$ in increments of $10\deg$. Initially, we used increments of $5\deg$ but the amplitude variation was so small, we were unable to determine if the change was due to an actual change in amplitude, or do to statistical fluctuations. The conversion from the cavity angle $\alpha$ to polar angle $\theta$ is given as follows:
+			\begin{equation}
+			\label{alpha2theta}
+				\cos(\theta) = \frac{1}{2}\cos(\alpha) - \frac{1}{2}
+			\end{equation}
+		
 	\section{Analysis and Results}
 	
 	\section{Conclusion}
@@ -148,6 +167,9 @@ Abstract Things
 				
 				\item The speaker wire was extremely sensitive to any movements. We suspect that bumping the speaker wire actually changed the angle of the speaker inside the cavity and changing the location of nodes.
 			\end{enumerate}
+		
+	\section{Appendix: A}
+	\label{Appendix: A}
 
 
 \end{document}
