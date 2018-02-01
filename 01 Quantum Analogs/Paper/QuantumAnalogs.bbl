@@ -1,0 +1,12 @@
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
+
+\bibitem{Quantum}
+D.~H. McIntyre, {\em Quantum Mechanics}.
+\newblock Pearson, 2012.
+
+\bibitem{Boyce}
+W.~Boyce and R.~DiPrima, {\em Elementary Differential Equations and Boundary
+  Value Problems, 10th Edition}.
+\newblock Laurie Rosatone, 2012.
+
+\end{thebibliography}\endgroup
