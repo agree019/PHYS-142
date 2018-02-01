@@ -4,13 +4,17 @@
 \section{Appendix}
 \label{AppendixA}
 
+All numerical calculations were written and performed in Python.
+
+\subsection{Cavity Angle and Polar Angle Relation}
+
 \begin{figure}[H]
+	\centering
 	\captionsetup{justification = raggedright}
 	\includegraphics[width=0.4\textwidth]{Graphs/ThetaAlpha.png}
 	\caption{Relation between $\cos(\theta)$ and cavity angle $\alpha$ when spherical symmetry is present}
 	\label{ThetaAlpha}
 \end{figure}
-
 
 
 \subsection{Amplitude and Polar Angle Measurement Tables}
@@ -30,6 +34,8 @@ For clarity, instead of plotting $\cos(\theta)$ we plot $|\cos(\theta)|$ since c
 	\end{figure}
 \end{multicols}
 
+\pagebreak
+
 \begin{multicols}{2}
 	\begin{table}[H]
 		\includegraphics[width=0.45\textwidth]{Tables/3679Table.png}
@@ -43,6 +49,8 @@ For clarity, instead of plotting $\cos(\theta)$ we plot $|\cos(\theta)|$ since c
 		\label{3679Graph}
 	\end{figure}
 \end{multicols}
+
+
 
 \begin{multicols}{2}	
 	\begin{table}[H]
@@ -73,6 +81,7 @@ For clarity, instead of plotting $\cos(\theta)$ we plot $|\cos(\theta)|$ since c
 	\end{figure}
 \end{multicols}
 
+\pagebreak
 
 \begin{multicols}{2}	
 	\begin{table}[H]
@@ -92,46 +101,46 @@ For clarity, instead of plotting $\cos(\theta)$ we plot $|\cos(\theta)|$ since c
 \subsection{Legender Polynomial Comparisons}
 \begin{figure}[H]
 	\centering
-	\subfloat[]{\includegraphics[height=6cm]{Graphs/2291Graph.png}}
+	\subfloat[Measured acoustic amplitude plotted against $\cos(\theta)$ for the 2291 Hz resonance]{\includegraphics[height=6cm]{Graphs/2291Graph.png}}
 	\qquad
-	\subfloat[Legendre polynomial $\mathrm{P}_1$]{\includegraphics[height=6cm]{Legendre/legendreL1.png}\label{L1}}
-	\caption{A qualitative inspection indicates that the resonance at $2291$ Hz corresponds to the $\ell=1$ Legendre polynomial}
+	\subfloat[Legendre polynomial $|\mathrm{P}_1|^2$]{\includegraphics[height=6cm]{Legendre/legendreL1.png}\label{L1}}
+	\caption{Comparison of the measured data and the $\ell=1$ Legendre polynomial for the $2291$ Hz resonance.}
 	\label{legendre1}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\subfloat[]{\includegraphics[height=6cm]{Graphs/3679Graph.png}}
+	\subfloat[Measured acoustic amplitude plotted against $\cos(\theta)$ for the 3679 Hz resonance]{\includegraphics[height=6cm]{Graphs/3679Graph.png}}
 	\qquad
-	\subfloat[Legendre polynomial $\mathrm{P}_2$]{\includegraphics[height=6cm]{Legendre/legendreL2.png}\label{L2}}
-	\caption{A qualitative inspection indicates that the resonance at $3679$ Hz corresponds to the $\ell=2$ Legendre polynomial}
+	\subfloat[Legendre polynomial $|\mathrm{P}_2|^2$]{\includegraphics[height=6cm]{Legendre/legendreL2.png}\label{L2}}
+	\caption{Comparison of the measured data and the $\ell=2$ Legendre polynomial for the $3679$ Hz resonance.}
 	\label{legendre2}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\subfloat[Caption A]{\includegraphics[height=6cm]{Graphs/4962Graph.png}}
+	\subfloat[Measured acoustic amplitude plotted against $\cos(\theta)$ for the 4962 Hz resonance]{\includegraphics[height=6cm]{Graphs/4962Graph.png}}
 	\qquad
-	\subfloat[Legendre polynomial $\mathrm{P}_3$]{\includegraphics[height=6cm]{Legendre/legendreL3.png}\label{L3}}
-	\caption{A qualitative inspection indicates that the resonance at $4962$ Hz corresponds to the $\ell=3$ Legendre polynomial}
+	\subfloat[Legendre polynomial $|\mathrm{P}_3|^2$]{\includegraphics[height=6cm]{Legendre/legendreL3.png}\label{L3}}
+	\caption{Comparison of the measured data and the $\ell=3$ Legendre polynomial for the $4962$ Hz resonance.}
 	\label{legendre3}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\subfloat[Caption A]{\includegraphics[height=6cm]{Graphs/6202Graph.png}}
+	\subfloat[Measured acoustic amplitude plotted against $\cos(\theta)$ for the 6202 Hz resonance]{\includegraphics[height=6cm]{Graphs/6202Graph.png}}
 	\qquad
-	\subfloat[Legendre polynomial $\mathrm{P}_4$]{\includegraphics[height=6cm]{Legendre/legendreL4.png}\label{L4}}
-	\caption{A qualitative inspection indicates that the resonance at $6202$ Hz corresponds to the $\ell=4$ Legendre polynomial}
+	\subfloat[Legendre polynomial $|\mathrm{P}_4|^2$]{\includegraphics[height=6cm]{Legendre/legendreL4.png}\label{L4}}
+	\caption{Comparison of the measured data and the $\ell=4$ Legendre polynomial for the $6202$ Hz resonance.}
 	\label{legendre4}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\subfloat[Caption A]{\includegraphics[height=6cm]{Graphs/7409Graph.png}}
+	\subfloat[Measured acoustic amplitude plotted against $\cos(\theta)$ for the 7409 Hz resonance]{\includegraphics[height=6cm]{Graphs/7409Graph.png}}
 	\qquad
-	\subfloat[Legendre polynomial $\mathrm{P}_5$]{\includegraphics[height=6cm]{Legendre/legendreL5.png}\label{L5}}
-	\caption{A qualitative inspection indicates that the resonance at $7409$ Hz corresponds to the $\ell=5$ Legendre polynomial}
+	\subfloat[Legendre polynomial $|\mathrm{P}_5|^2$]{\includegraphics[height=6cm]{Legendre/legendreL5.png}\label{L5}}
+	\caption{Comparison of the measured data and the $\ell=5$ Legendre polynomial for the $7409$ Hz resonance.}
 	\label{legendre5}
 \end{figure}
 
@@ -141,12 +150,12 @@ For clarity, instead of plotting $\cos(\theta)$ we plot $|\cos(\theta)|$ since c
 \begin{figure}[H]
 	\centering
 	\subfloat[$\ell=1$, $m=0$ polar plot for 2291 Hz resonance]{\includegraphics[width=0.35\textwidth]{2.3.2/F2291.jpg}\label{Polar2291}}
-	\qquad
+	\qquad \qquad
 	\subfloat[$\ell=2$, $m=0$  plot for 3679 Hz resonance ]{\includegraphics[width=0.35\textwidth]{2.3.2/F3679.jpg}\label{Polar3679}}
 	\\
-	\subfloat[$\ell=3$, $m=0$  plot for 4962 resonance]{\includegraphics[width=0.35\textwidth]{2.3.2/F4962.jpg}\label{Polar4962}}
-	\qquad
-	\subfloat[$\ell=5$, $m=0$  plot for 7409 resonance]{\includegraphics[width=0.35\textwidth]{2.3.2/F7409.jpg}\label{Polar6202}}
+	\subfloat[$\ell=3$, $m=0$  plot for 4962 Hz resonance]{\includegraphics[width=0.35\textwidth]{2.3.2/F4962.jpg}\label{Polar4962}}
+	\qquad \qquad
+	\subfloat[$\ell=5$, $m=0$  plot for 7409 Hz resonance]{\includegraphics[width=0.35\textwidth]{2.3.2/F7409.jpg}\label{Polar6202}}
 	\caption{Acoustic amplitude vs polar angle ($\theta$) with azimuthal angle $\varphi = 0$ for 4 resonant frequencies. Comparing these to the spherical harmonics in \figref{sphereHarm}, it is possible to determine the angular momentum quantum number $\ell$ for each resonance.}
 	\label{polarGraphs}
 \end{figure}
@@ -154,11 +163,11 @@ For clarity, instead of plotting $\cos(\theta)$ we plot $|\cos(\theta)|$ since c
 \begin{figure}[H]
 	\centering
 	\subfloat[Spherical harmonic for $\ell = 1$, $m= 0$]{\includegraphics[width=0.4\textwidth]{SphHarm/SphHarmL1M0.png}\label{sphHarmL1M0}}
-	\qquad
+	\qquad \quad
 	\subfloat[Spherical harmonic for $\ell = 2$, $m=0$]{\includegraphics[width=0.4\textwidth]{SphHarm/SphHarmL2M0.png}\label{sphHarmL2M0}}
 	\\
 	\subfloat[Spherical harmonic for $\ell = 3$, $m = 0$]{\includegraphics[width=0.4\textwidth]{SphHarm/SphHarmL3M0.png}\label{sphHarmL3M0}}
-	\qquad
+	\qquad \quad
 	\subfloat[Spherical harmonic for $\ell = 5$, $m = 1$]{\includegraphics[width=0.4\textwidth]{SphHarm/SphHarmL5M0.png}\label{sphHarmL5M0}}
 	\caption{Projections of the spherical harmonics $\mathrm{Y}^\ell_m$ onto the $\varphi = 0$ plane. Angle markings indicate polar angle $\theta$.}
 	\label{sphereHarm}
@@ -170,9 +179,9 @@ For clarity, instead of plotting $\cos(\theta)$ we plot $|\cos(\theta)|$ since c
 \begin{figure}[H]
 	\captionsetup{justification = centering}
 	\centering
-	\subfloat[$\ell=1$, $m=0$]{\includegraphics[width=0.4\textwidth]{Day4/L13mmPolar2084_806.png}}
-	\qquad
-	\subfloat[$\ell=1$, $m=\pm1$]{\includegraphics[width=0.4\textwidth]{Day4/L13mmPolar2251_140.png}}
+	\subfloat[$\ell=1$, $m=0$]{\includegraphics[width=0.35\textwidth]{Day4/L13mmPolar2084_806.png}}
+	\qquad \quad
+	\subfloat[$\ell=1$, $m=\pm1$]{\includegraphics[width=0.35\textwidth]{Day4/L13mmPolar2251_140.png}}
 	\caption{Amplitude versus polar angle $\theta$ for the $\ell=1$ resonance with 3mm Spacing}
 	\label{3mmliftedDegeneracy}
 \end{figure}
@@ -181,9 +190,9 @@ For clarity, instead of plotting $\cos(\theta)$ we plot $|\cos(\theta)|$ since c
 \begin{figure}[H]
 	\captionsetup{justification = centering}
 	\centering
-	\subfloat[[$\ell=1$, $m=0$]{\includegraphics[width=0.4\textwidth]{Day4/L16mmPolar2084_806.png}}
-	\qquad
-	\subfloat[[$\ell=1$, $m=\pm1$]{\includegraphics[width=0.4\textwidth]{Day4/L16mmPolar2251_140.png}}
+	\subfloat[[$\ell=1$, $m=0$]{\includegraphics[width=0.35\textwidth]{Day4/L16mmPolar2084_806.png}}
+	\qquad \quad
+	\subfloat[[$\ell=1$, $m=\pm1$]{\includegraphics[width=0.35\textwidth]{Day4/L16mmPolar2251_140.png}}
 	\caption{Amplitude versus polar angle $\theta$ for the $\ell=1$ resonance with 6mm Spacing}
 	\label{6mmliftedDegeneracy}
 \end{figure}
