@@ -37,7 +37,7 @@
 \usepackage{hyperref}
 %\hypersetup{citebordercolor = {0 0.75 0.75}, linkbordercolor = {0 0.75 0.75} }
 \hypersetup{allcolors = {0 0.75 0.75}, allbordercolors = {0 0.75 0.75}, filecolor = {0 0.75 0.75}, linkbordercolor = {0 0.75 0.75} }
-\usepackage{cleveref}
+\usepackage[capitalize]{cleveref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % Text Formatting packages
@@ -61,10 +61,14 @@
 \renewcommand{\deg}{^\circ} % Degree Symbol (only in math mode)
 \renewcommand{\vec}[1]{\mathbf{#1}} % boldface vectors
 
+\newcommand{\red}[1]{\textbf{\textcolor{red}{#1}}}
 \newcommand{\redline}{\textcolor{red}{\rule{\textwidth}{2.5pt} } }
 \newcommand{\redmark}{\textcolor{red}{\rule[1mm]{7mm}{1mm} }}
 
-\newcommand{\red}[1]{\textbf{\textcolor{red}{#1}}} % My standard commenting style
+\crefname{equation}{Eq.}{Eqs.}
+
+
+
 \newcommand{\scap}[1]{\textsc{\makeLowercase{#1}}} % Makes caps small so it doesnt SHOUT
 \newcommand{\Ylm}[2]{\mathrm{Y}^{#1}_{#2}} % Spherical Harmonics
 \newcommand{\crefrangeconjunction}{-}
@@ -142,9 +146,7 @@
 	\vspace{0.5cm}
 
 \begin{abstract}
-	\red{Condense}
-	
-	In this experiment, we model the quantum mechanical wavefunction of the Hydrogen atom as a pressure wave inside a spherical cavity. We find that for spherical symmetry, the standing pressure waves inside the cavity are match the Legendre polynomials with a standard error of 0.0360. 
+	In this experiment, we model the quantum mechanical wavefunction of the Hydrogen atom as a pressure wave inside a spherical cavity. We find that, for a spherically symmetric cavity, the standing pressure waves coincide with the polynomials to a standard error of 0.0360 and polar graphs of acoustic amplitude against polar angle, at a qualitative level, match those of the spherical harmonics. Further, we simulate the Zeeman effect and break the spherical symmetry by elongating the cavity with spacing rings. For the $\ell=1$ state, we are able to resolve the $m=0$ and $m=\pm1$ resonant peaks. Polar graphs of acoustic amplitude for the split peaks correspond to their respective spherical harmonics.
 \end{abstract}
 
 
@@ -152,7 +154,7 @@
 
 
 \section{Introduction}
-Often times in physics, the specific mathematical equations used to represent physical systems can become system-independent under special circumstances. In other words, the same equations can be used to describe very different systems. One intriguing example is a parallel between the Shcr\"odinger equation and the wave equation. Both equations describe a sort of ``wave.'' In the Schr\"odinger equation, the ``wave'' is not a physical wave, but a probability wave. In the case of the wave equation, the wave is a physical pressure wave. Nonetheless, under special circumstances, these two equations can be modeled the same way.
+Often times in physics, the specific mathematical equations used to represent physical systems can become system-independent under special circumstances. In other words, the same equations can be used to describe very different systems. One intriguing example is a parallel between the Shcr\"odinger equation and the wave equation. Both equations describe a type of ``wave.'' In the Schr\"odinger equation, the ``wave'' is not a physical wave, but a probability wave. In the case of the wave equation, the wave is a physical pressure wave. Nonetheless, under special circumstances, these two equations can be modeled the same way.
 
 In this experiment, we model the wavefunction of the Hydrogen atom with a physical pressure wave inside a hollow spherical cavity. This is possible because the conditions inside the spherical cavity mimic the conditions of a Hydrogen atom and the equations which describe the wavefunction and pressure wave have the same solution. We will begin by analyzing the solutions to both the Schr\"odinger equation and the wave equation.
 
@@ -231,14 +233,15 @@ where the entire angular dependence of the pressure wave is contained in the sph
 \begin{equation}
 	\left[ -\ppsd{r} - \frac{2}{r}\ppd{r} + \frac{\ell(\ell+1)}{r^2} \right] \mathrm{F} = \frac{\omega^2}{v^2}\mathrm{F}
 \end{equation}
-	
-Since the Coulomb potential has no angular dependence, it does affect the angular solutions of  either the Schr\"odinger equation or the Helmholtz equation and the angular dependence of both solutions are identical. 
+
 
 	
 \section{Experimental Procedure}
 
 	\subsection{Experiment Setup}
-	This experiment utilized the \emph{Quantum Analogs Controller} seen in \figref{QAController}. The ``Sine Wave Input'' on the controller is connected to the signal generator and provides the frequency of the signal inside the cavity. The ``Speaker Output'' is connected to the speaker on the cavity. The microphone from the cavity is connected to the ``Microphone Input'' on the device. This reads the signal from the cavity into the controller. The ``A/C Monitor'' port is connected to channel 2 on our oscilloscope. This is the output of the microphone from inside the cavity. Finally, we connect the ``Detector Output'' on the controller to a multimeter set to read DC voltage. The controller converts the AC microphone signal to its envelope and outputs it as a DC signal to ``Detector Output.'' A full view of our lab bench can be used for reference in \figref{experiment}.
+%	This experiment utilized the \emph{Quantum Analogs Controller} seen in \figref{QAController}. The ``Sine Wave Input'' on the controller is connected to the signal generator and provides the frequency of the signal inside the cavity. The ``Speaker Output'' is connected to the speaker on the cavity. The microphone from the cavity is connected to the ``Microphone Input'' on the device. This reads the signal from the cavity into the controller. The ``A/C Monitor'' port is connected to channel 2 on our oscilloscope. This is the output of the microphone from inside the cavity. Finally, we connect the ``Detector Output'' on the controller to a multimeter set to read DC voltage. The controller converts the AC microphone signal to its envelope and outputs it as a DC signal to ``Detector Output.'' A full view of our lab bench can be used for reference in \figref{experiment}.
+
+	This experiment utilized the \emph{Quantum Analogs Controller} seen in \figref{QAController}. This device outputs the wave to the cavity and reads the input from the microphone. The equipment is connected according to the lab manual \cite{labManual} and a full view of our lab bench can be used for reference in \figref{experiment}.
 	
 	
 	\subsection{Cavity Angles and Spherical Angles}
@@ -247,7 +250,7 @@ Since the Coulomb potential has no angular dependence, it does affect the angula
 		\label{alpha2theta}
 		\cos(\theta) = \frac{1}{2}\cos(\alpha) - \frac{1}{2}
 		\end{equation}
-	In the appendix, \figref{ThetaAlpha} shows the relation between cosine of the polar angle $\theta$ and the cavity angle $\alpha$. When the spherical symmetry is broken however, the system is quantized about the $\vec{z}$ axis perpendicular to the table, and the cavity angle is equal to the azimuthal angle $\varphi$.
+	In the appendix, \figref{ThetaAlpha} shows the relation between cosine of the polar angle and the cavity angle. When the spherical symmetry is broken however, the system is quantized about the $\vec{z}$ axis perpendicular to the table, and the cavity angle is equal to the azimuthal angle $\varphi$.
 	
 	\begin{figure}[H]
 		\captionsetup{justification = centering}
@@ -265,7 +268,7 @@ Since the Coulomb potential has no angular dependence, it does affect the angula
 	\subsection{Frequency Spectrum}
 %	Before we begin mapping out resonant frequencies, we need to find the frequency range where the cavity response is linear. We do this because the equations we seek to model are linear. To do this, we set the attenuation to maximum (10), $\alpha = 180 \deg$, and sweep the frequency from $1$ Hz to $\approx 8$ kHz in increments of $10$ Hz. The linear regime of the signal ranges from about $2$ kHz to $8$ kHz and is seen in \figref{LinRegime}. We use $10$ Hz increments simply to find the neighborhood of a resonance, as greater resolution is not required. After we found the linear regime, we lowered the attenuation to half (5.0) and obtained the spectrum of frequencies with clear resonances, see \figref{Raw50a180}. The two smaller peaks at $\approx 6.5$ kHz and $8$ kHz are products of cross talk, and thus not resonances.
 	
-	Since the equations we are modeling are linear differential equations, we need to determine the frequency range where the cavity response is linear. measure the frequency spectrum over the entire frequency range, with the attenuation on the Quantum Analogs device set to its maximum setting, and focus our attention to the region where the spectrum increases linearly. We determine the linear regime of frequency response is between $2$ kHz to $8.1$ kHz. The linear regime of the frequency spectrum is shown in \figref{LinRegime}. The large spikes indicate resonant frequencies. Once we determine the linear regime of the signal, we fine tune the attenuation and speaker amplitude to maximize signal and minimize cross-talk. The frequency spectrum for $\alpha = 180\deg$ and $50\%$ attenuation can be seen in \figref{Raw50a180}. The two smaller peaks at $\approx 6.5$ kHz and $8$ kHz are products of cross talk, and thus not resonances.
+	Since the equations we are modeling are linear differential equations, we need to determine the frequency range where the cavity response is linear. We measure the frequency spectrum over the entire frequency range, with the attenuation on the Quantum Analogs device set to its maximum setting, and focus our attention to the region where the spectrum increases linearly. This linear regime of frequency response is between $2$ kHz to $8.1$ kHz and is shown in \figref{LinRegime}. Once we determine the linear regime of the signal, we fine tune the attenuation and speaker amplitude to maximize signal and minimize cross-talk. The frequency spectrum for $\alpha = 180\deg$ and $50\%$ attenuation can be seen in \figref{Raw50a180}. The two smaller peaks at $\approx 6.5$ kHz and $8$ kHz are products of cross talk, and thus not resonances.
 	
 	\begin{figure}[H]
 		\captionsetup{justification = justified}
@@ -280,8 +283,9 @@ Since the Coulomb potential has no angular dependence, it does affect the angula
 		\label{freqSpec}
 	\end{figure}
 	
-	
-	
+
+
+
 	
 	\subsection{Measuring Spherical Cavity Resonances with the Computer}
 	In this section, we used the sound card in the computer to both generate and measure the resonances within the cavity. We set the attenuator to its highest value ($10$) to protect the sound card. The sound card output is connected to the Quantum Analogs \emph{Sine Wave Input} and to channel 1 of the oscilloscope. The \emph{AC Monitor} from the Quantum Analogs device is connected to the microphone input on the sound card and to channel 2 of the oscilloscope. 
@@ -301,7 +305,9 @@ Since the Coulomb potential has no angular dependence, it does affect the angula
 \section{Results and Analysis}
 	
 	\subsection{Determining Resonant Frequencies}
-	Once we restricted our attention to the linear regime, see \figref{Raw50a180}, we began isolating the resonant frequencies using the oscilloscope. On the oscilloscope, a resonance will appear as in increase in the amplitude orders of magnitude larger than the characteristic scale of the signal. Near a resonance, we fine tune the frequency in increments of $1$ Hz until the amplitude is maximized. It is important to note that denominations smaller than $1$ Hz are not discernible on the oscilloscope due to the limited resolution of the screen. A table summarizing the resonant frequencies and their nodal angles is provided in \figref{freqTable}. For a full summary of the acoustic amplitude vs polar angle measurements for all resonant frequencies, see \cref{2291Table,3679Table,4962Table,6202Table,7409Table} in the appendix. For the corresponding graphs of acoustic pressure versus polar angle, see \cref{2291Graph,3679Graph,4962Graph,6202Graph,7409Graph}.
+	Once we restricted our attention to the linear regime, see \figref{Raw50a180}, we began isolating the resonant frequencies using the oscilloscope.
+	
+	On the oscilloscope, a resonance will appear as a sharp spike with amplitude about 5 or 6 times larger than the characteristic signal amplitude. Near a resonance, we fine tune the frequency in increments of $1$ Hz until the amplitude is maximized. It is important to note that denominations smaller than $1$ Hz are not discernible on the oscilloscope due to the limited resolution of the screen. A table summarizing the resonant frequencies and their nodal angles is provided in \figref{freqTable}. For a full summary of the acoustic amplitude vs polar angle measurements for all resonant frequencies, see \cref{2291Table,3679Table,4962Table,6202Table,7409Table} in the appendix. For the corresponding graphs of acoustic pressure versus polar angle, see \cref{2291Graph,3679Graph,4962Graph,6202Graph,7409Graph}.
 	
 	\begin{table}[H]
 		\captionsetup{justification = centering}
@@ -325,7 +331,7 @@ Since the Coulomb potential has no angular dependence, it does affect the angula
 		\label{angleSpectra}
 	\end{figure}
 
-	We can see that as the cavity angle approaches $0\deg$, the resonance at $\approx6$ kHz starts large and drops off while the resonance at $\approx7.5$ kHz starts large, drops off, and then increases. This is due to the angular dependence of the spherical harmonics and specifically, the Legendre Polynomials. As the order of the polynomial increases, antinodes form closer and closer to $\cos(\theta) = 1$. In other words, the behavior of higher frequency resonances is more erratic near angles close to $\cos(\theta) = 1$, see the Legendre polynomials in \cref{L1,L2,L3,L4,L5} in the appendix. So as we vary the cavity angle from $40\deg$ to $0\deg$, some Legendre polynomials decrease while others increase.
+	From \figref{angleSpectra}, as the cavity angle approaches $0\deg$, the resonance at $\approx6$ kHz starts large and drops off but the resonance at $\approx7.5$ kHz starts large, drops off, and then increases. This is due to the angular dependence of the spherical harmonics and specifically, the Legendre Polynomials. As the order of the polynomial increases, antinodes form closer and closer to $\cos(\theta) = 1$. In other words, the behavior of higher frequency resonances is more erratic near angles close to $\cos(\theta) = 1$, see the Legendre polynomials in \cref{L1,L2,L3,L4,L5} in the appendix. So as we vary the cavity angle from $40\deg$ to $0\deg$, some Legendre polynomials decrease while others increase.
 
 
 %	\begin{figure}[H]
@@ -337,7 +343,8 @@ Since the Coulomb potential has no angular dependence, it does affect the angula
 		
 	
 	\subsection{Determining $\ell$ Values for each Resonance}
-	Once we have isolated the resonant frequencies, we seek to determine what $\ell$ value they correspond to. We will present two ways to achieve this. First, we compare graphs of the acoustic amplitude vs $\cos(\theta)$ to the Legendre polynomials. Since the acoustic amplitude is the analog of the wavefunction, the shape of the graphs should match. Second, we compare the polar plots of acoustic amplitude vs polar angle to the spherical harmonics. This time, the polar plots should match the shapes of the spherical harmonics.
+	
+	Once we isolate the resonant frequencies, their corresponding $\ell$ values can be determined through a qualitative analysis. We will present two ways to achieve this. First, we compare graphs of the acoustic amplitude vs $\cos(\theta)$ to the Legendre polynomials. Since the acoustic amplitude is the analog of the wavefunction, the shape of the graphs should match. Second, we compare the polar plots of acoustic amplitude vs polar angle to the spherical harmonics. This time, the polar plots should match the shapes of the spherical harmonics.
 	
 	We begin by noting that for any quantum mechanical system, the wavefunction $\psi$ is an inherently imaginary quantity. We can only ever observe real quantities however. To extract any observable quantity from the wavefunction, we must take its amplitude $|\psi|^2$. For the Hydrogen atom, the wavefunction is proportional to the spherical harmonics $\Ylm{\ell}{m}$ and thus also proportional to the Legendre polynomials $\mathrm{P}_\ell(\cos(\theta))$. So, the graphs of acoustic amplitude vs $\cos(\theta)$ should match the magnitude of the Legendre polynomials from the amplitude of the wavefunction $|\mathrm{P}_\ell(\cos(\theta))|^2$. Similarly, polar plots of acoustic amplitude should match the real component of the spherical harmonics.
 	
@@ -371,9 +378,9 @@ Since the Coulomb potential has no angular dependence, it does affect the angula
 
 
 	\subsubsection{Comparison to Spherical Harmonics}
-	To make a comparison to the spherical harmonics, we began mapping out how the acoustic amplitude varries as a function of cavity angle at each resonance. To begin, we set the angle on the cavity to $\alpha = 180 \deg$ and record the acoustic amplitude using the ``Measure wavefunction'' button on the computer. We then decrease $\alpha$ from $180 \deg$ to $0 \deg$ in increments of $\alpha = 10\deg$.
+	To make a comparison to the spherical harmonics, we begin by mapping out how the acoustic amplitude varies as a function of cavity angle at each resonance. We set the angle on the cavity to $\alpha = 180 \deg$ and record the acoustic amplitude using the ``Measure wavefunction'' button on the computer. This process is repeated as $\alpha$ decreases from $180 \deg$ to $0 \deg$ in increments of $\alpha = 10\deg$.
 	
-	Once we obtained the polar amplitude plots, we can simply compare them qualitatively to the real component of the spherical harmonics. \figref{SphCompare} below shows one such comparison. The remaining polar acoustic amplitude plots can be seen in \figref{polarGraphs} and their corresponding spherical harmonics in \figref{sphereHarm} in the Appendix. From this qualitative comparison, it is possible to determine the $\ell$ value for each resonance.
+	Once we obtain the polar amplitude plots, we may simply compare them to the real component of the spherical harmonics. \figref{SphCompare} below shows one such comparison. The remaining polar acoustic amplitude plots can be seen in \figref{polarGraphs} and their corresponding spherical harmonics in \figref{sphereHarm} in the Appendix. From this qualitative comparison, it is possible to determine the $\ell$ value for each resonance.
 	
 	\begin{figure}[H]
 		\centering
@@ -427,28 +434,32 @@ Since the Coulomb potential has no angular dependence, it does affect the angula
 
 
 \subsection{Phase Measurements}
-\red{TO DO}
+Upon breaking the spherical symmetry of the cavity, the degeneracy in $\ell=1$ state is partially lifted. One way to see this is to examine the phase of the standing waves. With spherical symmetry, the phase of the standing waves inside the cavity are identical. However, once we break the spherical symmetry, we can begin to see the phases between the $m=0$ and $m=\pm1$ states begin to differ as seen in \cref{phaseTable}. However, because the $m=\pm1$ states are both symmetric in azimuthal, we are unable to resolve their degeneracy
 
-
-\begin{figure}[H]
+\begin{table}[H]
 	\captionsetup{justification = centering}
 	\centering
 	\includegraphics[width=0.8\textwidth]{Tables/PhaseMeasurements.png}
-	\caption{Table of measured phases for top and bottom hemispheres for all spacer rings}
+	\caption{Phase measurements for top and bottom hemispheres}
 	\label{phaseTable}
-\end{figure}
-
-
+\end{table}
 
 
 
 \section{Conclusion}
 
 	\subsection{Achievements}
-	In this experiment, we successfully modeled the angular dependence of the Hydrogen wavefunction with a standing pressure wave inside a spherical cavity. Plots of acoustic pressure versus cavity angle match those of the Legendre polynomials. Similarly, polar plots of acoustic pressure versus polar angle match the spherical harmonics. Further, we simulated the Zeeaman effect and achieved partial energy level splitting in the $\ell=1$ state. We were only able to resolve the $m=0$ and $m=\pm1$ states however because $m=\pm1$ is symmetric in the azimuthal angle.
+	In this experiment, we successfully modeled the angular dependence of the Hydrogen wavefunction with a standing pressure wave inside a spherical cavity. We are able to identify the $\ell$ values of each resonance by comparison to the Legendre polynomials and the spherical harmonics. Further, we simulated the Zeeman effect, which breaks the spherical symmetry, by introducing spacing rings into the cavity. Because the symmetry is broken, some of the degeneracies in $\ell$ are resolved. We were only able to resolve the $m=0$ and $m=\pm1$ states however because $m=\pm1$ is symmetric in the azimuthal angle.
 
 	\subsection{Future Improvements}
 	Throughout this experiment, the microphone was extremely sensitive to any noise and even vibrations in the room, chairs moving, the lab bench being bumped, doors closing, etc... One improvement to this experiment is to perform it in an isolated room on a sand table which dampens vibrations from the environment.
+	
+	One natural extension to this experiment is to measure the $m$ states for higher resonances. Higher resonances correspond to larger $\ell$ values, which contain $2\ell + 1$ degeneracies. Breaking the spherical symmetry, we should be able to resolve some of the degeneracies. Again, we expect to find that we can only resolve the degeneracies in $m$ up to a sign. 
+	
+	Finally, one potentially interesting avenue to explore is to change the density of the gas 
+	Since the velocity of the standing waves inside the cavity depends on the composition of the gas, one interesting avenue to explore is to change the density of the gas inside the cavity. For gases less dense than air, the standing waves travel faster and the resonant frequencies are expected to increase. 
+	
+	
 	
 \include{AppendixA}
 

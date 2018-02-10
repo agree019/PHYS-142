@@ -1,5 +1,8 @@
 \providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
 
+\bibitem{labManual}
+W.~Beyermann, {\em Quantum Analogs Laboratory Manual}.
+
 \bibitem{Quantum}
 D.~H. McIntyre, {\em Quantum Mechanics}.
 \newblock Pearson, 2012.

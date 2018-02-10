@@ -34,7 +34,7 @@
 % Citation packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{hyperref}
-\hypersetup{citebordercolor = {0 0.75 0.75}, linkbordercolor = {0 0.75 0.75} }
+\hypersetup{allcolors = {0 0.75 0.75}, allbordercolors = {0 0.75 0.75}, filecolor = {0 0.75 0.75}, linkbordercolor = {0 0.75 0.75} }
 %\usepackage{cleveref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,3 +82,54 @@
 	\let\@ifnextchar\new@ifnextchar
 	\array{*\c@MaxMatrixCols c}}
 \makeatother
+
+
+\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+\newenvironment{institutions}[1][2em]{\begin{list}{}{\setlength\leftmargin{#1}\setlength\rightmargin{#1}}\item[]}{\end{list}}
+
+
+\begin{document}
+	
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Title
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	\begin{center}
+		
+		{\huge \bf Laser Diode Spectroscopy}
+		
+		\vspace{0.5cm}
+		
+		\textbf{Adam Green}, \textbf{Guillermo Acuna}\\
+		
+		\texttt{\footnotesize \email{agree019@ucr.edu}},
+		\texttt{\footnotesize \email{gacun002@ucr.edu}}
+		
+		\vspace{0.5cm}
+		
+		
+		\begin{institutions}[2.25cm]
+			\footnotesize
+			{\it 
+				Department of Physics \& Astronomy, 
+				University of  California, Riverside, 
+				{CA} 92521	    
+			}    
+		\end{institutions}
+		
+		\vspace{0.5cm}
+		
+	\end{center}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Abstract
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	\vspace{0.5cm}
+	\begin{abstract}
+		Abstract Things
+	\end{abstract}
+	
+	
+	
+\end{document}
