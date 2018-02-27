@@ -1,0 +1,20 @@
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
+
+\bibitem{Quantum}
+D.~H. McIntyre, {\em Quantum Mechanics}.
+\newblock Pearson, 2012.
+
+\bibitem{labManual}
+W.~Beyermann, {\em Diode Laser Spectroscopy Laboratory Manual}.
+
+\bibitem{Rb85}
+D.~A. Steck, {\em Rubidium 85 D Line Data}.
+
+\bibitem{Rb87}
+D.~A. Steck, {\em Rubidium 87 D Line Data}.
+
+\bibitem{article}
+H.~Lewandowski, D.~Harber, D.~Whitaker, and E.~A.~Cornell, ``Simplified system
+  for creating a bose–einstein condensate,''.
+
+\end{thebibliography}\endgroup
