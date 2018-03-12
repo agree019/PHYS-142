@@ -79,6 +79,7 @@
 \usepackage{enumerate}
 \usepackage{wrapfig}
 \usepackage{lipsum}
+\usepackage{xhfill}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 % Custom Commands
@@ -86,7 +87,7 @@
 % Red marks to get attention
 \newcommand{\red}[1]{\textbf{\textcolor{myred1}{#1}}} % Red Text
 \newcommand{\redmark}{\textcolor{myred1}{\rule{3.5mm}{3.5mm} }} % Red Dash
-\newcommand{\redline}{\textcolor{myred1}{\rule{\textwidth}{2.5pt} } } % Red Rule
+\newcommand{\redline}{\noindent\xhrulefill{myred1}{3pt}} % Red Rule
 \newcommand{\whitefill}{\textcolor{white}{\rule{\textwidth}{2.5pt} } }
 
 
@@ -179,14 +180,13 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 	\vspace{0.5cm}
 	\begin{abstract}
-		In this experiment, study the hyperfine splitting and Zeeman effect for naturally occurring Rubidium using saturated absorption spectroscopy. For $^{85}\text{Rb}$, we measure the splitting between the $F=2$ and $F=3$ states to be $3320 \ \text{MHz} \pm 117 \ \text{MHz}$. For $^{87}\text{Rb}$, we determine the splitting between the $F=1$ and $F=2$ state to be $7390 \ \text{MHz} \pm 117 \ \text{MHz}$. We provide quantitative energy level diagrams for both isotopes of Rubidium. Further, upon the application of an external magnetic field, we measure the splitting between the hyperfine transitions. We provide an analysis of Zeeman splitting vs magnetic field strength and we determine the Land\'e g-factor to be $g_F = 0.307 \pm 0.0103$.
+		In this experiment, we study the hyperfine splitting and Zeeman effect for naturally occurring Rubidium using saturated absorption spectroscopy. For $^{85}\text{Rb}$, we measure the splitting between the $F=2$ and $F=3$ states to be $3320 \ \text{MHz} \pm 117 \ \text{MHz}$. For $^{87}\text{Rb}$, we determine the splitting between the $F=1$ and $F=2$ state to be $7390 \ \text{MHz} \pm 117 \ \text{MHz}$. We provide quantitative energy level diagrams for both isotopes of Rubidium. Further, upon the application of an external magnetic field, we measure the splitting between the hyperfine transitions. We provide an analysis of Zeeman splitting vs magnetic field strength and we determine the Land\'e g-factor to be $g_F = 0.307 \pm 0.0103$.
 	\end{abstract}
 	
 	\tableofcontents
 	
-	
 	\section{Introduction}
-	The ground states of Hydrogen and Rubidium have effectively the same electron configuration. Hydrogen consists of a single 1s electron while Rubidium consists of a closed shell plus a single 5s electron. This indicates that their spectra should share similar features. Solving the Schr\"odinger equation yields energies dependent on the principal quantum number ``$n$'' which contains $n^2$ degeneracies.
+	The ground states of Hydrogen and Rubidium have effectively the same electron configuration. Hydrogen consists of a single 1s electron while Rubidium consists of a closed shell plus a single 5s electron. This indicates that their spectra should share similar features. Solving the Schr\"odinger equation yields an energy spectra dependent on the principal quantum number ``$n$'' which contains $n^2$ degeneracies.
 	
 % Energy Level Diagram for Hydrogen
 	\begin{wrapfigure}{R}{0.5\textwidth}
@@ -194,12 +194,14 @@
 		\caption{Qualitative energy level diagram displaying the fine structure corrections for Hydrogen}
 		\label{HydrogenFine}
 	\end{wrapfigure}
-	
-	These degeneracies are resolved when a number of corrective effects are included. The first is a statement that electrons are moving at relativistic speeds which affects their kinetic energy simply known as the \emph{relativistic kinetic energy} correction. The second two only effect the s-orbital: the \emph{Darwin Term} is the smearing out of the Coulomb interaction between the nucleus and electron due to quantum fluctuations and the \emph{Lamb shift} arises from quantum electrodynamic interactions between the electrons and the vacuum. Finally, the spin and orbital angular momentum of the electron interact with each other giving rise to a \emph{spin-orbit coupling} effect. Due to this coupling, the quantum numbers representing the orbital angular momentum and spin, $L$ and $z$ respectively, are no longer good quantum numbers and are replaced by the total angular momentum, $J = L + S$, and its projection along the z-axis, $J_z$. Collectively, these corrections are referred to as the \emph{fine structure} and are visualized in \cref{HydrogenFine}.
+
+
+	%Long Version
+	These degeneracies in n are resolved when a number of corrective effects are included. The first is a statement that electrons are moving at relativistic speeds which affects their kinetic energy, simply known as the \emph{relativistic kinetic energy} correction. The second two only effect the s-orbital: the \emph{Darwin Term} and \emph{Lamb Shift}. The Darwin term is the smearing out of the Coulomb interaction between the nucleus and electron due to quantum fluctuations. The \emph{Lamb shift} arises from quantum electrodynamic interactions between the electrons and the vacuum. The final correction is known as \emph{spin-orbit coupling}, which arises from interactions between the orbital and spin angular momenta of the election. Collectively, these corrections are referred to as the \emph{fine structure} and are visualized in \cref{HydrogenFine}.
 	
 	These states are denoted by ``term states'' in the spectroscopic notation $^{2S+1}L_J$, where $L$ is the spectroscopic notation, $S,P,D,F$ for the corresponding orbital angular momentum quantum numbers $L=0,1,2,3$. In this notation, the ground state of the 5s Rb electron is denoted as $^2S_{1/2}$ and the first excited state is denoted $^2P_{3/2}$.
-
-	It turns out that the fine structure is still degenerate. To resolve these degeneracies, we must account for one additional effect. If the nucleus has a magnetic moment, denoted by $\vec{I}$, the electron feels the magnetic field produced by the nucleus. Thus, the energy of the electron now depends on the spin orientation relative to the magnetic field produced by the nucleus, known as the \emph{Zeeman Effect}. The additional corrections to the fine structure energy levels are known as the \emph{hyperfine structure} corrections. If the hyperfine splitting is much less than the fine structure splitting, then the magnetic quantum number $I=|\vec{I}|$ and orbital angular momentum quantum number $J$ are good quantum numbers. Further, the degeneracy in the fine structure is split according to total the angular momentum $F=I+J$. Note that $F$ takes values between $\{|I-J|, |I-J+1|,...,|I+J|\}$. With respect to the fine structure, the energy levels are split by:
+	
+	The Fine structure though is still degenerate. To resolve these degeneracies, we must account for one additional effect. If the nucleus has a magnetic moment, denoted by $\vec{I}$, the electron will interact with this magnetic field. This interaction, known as the \emph{Zeeman Effect}, will change the energy of the electron depending on the orientation of its spin. The additional corrections to the fine structure energy levels are known as the \emph{hyperfine structure} corrections. If the hyperfine splitting is much less than the fine structure splitting, then the magnetic quantum number $I=|\vec{I}|$ and orbital angular momentum quantum number $J$ are good quantum numbers. Further, the degeneracy in the fine structure is split according to total the angular momentum $F=I+J$. Note that $F$ takes values between $\{|I-J|, |I-J+1|,...,|I+J|\}$. With respect to the fine structure, the energy levels are split by:
 	\begin{equation}
 		\label{hyperfineSplitting}
 		E = \frac{\gamma}{2}\left[ F(F+1) - I(I+1) - J(J+1) \right]
@@ -217,8 +219,7 @@
 		\Delta E_{\text{weak}} = g_F \mu_B m_F B
 		\label{zeemanWeak}
 	\end{equation}
-	where $g_F \approx g_J \frac{F(F+1)-I(I+1)-J(J+1)}{2F(F+1)}$, $g_J$ is the \emph{Land\'e g-factor}, $\mu_B$ is the \emph{Bhor Magneton}, and $m_F=-F,-F+1,...,F$ is the quantum number for $F_z$. \redmark
-		
+	where $g_F \approx g_J \frac{F(F+1)-I(I+1)-J(J+1)}{2F(F+1)}$, $g_J$ is the \emph{Land\'e g-factor}, $\mu_B$ is the \emph{Bhor Magneton}, and $m_F=-F,-F+1,...,F$ is the quantum number for $F_z$. 		
 	 
 	\section{Experimental Procedure}
 
@@ -231,59 +232,92 @@
 %		\label{diodeLaser}
 %	\end{figure}
 
-	\subsubsection*{Mode Hopping}
-	Mode hopping is an undesirable feature of diode lasers and produces very sharp, discontinuous jumps in spectral scans, see \cref{modeHopping}. The frequency of the laser beam is actually a combination of the frequencies allowed by the various parts of the laser, see \cref{LaserSpectrumCavity}. The parts which contribute to the frequency are $1)$.\ the material of the diode, $2)$.\ the physical size of the internal cavity in the diode, $3)$.\ the diffraction grating and $4)$.\ the separation between the collimating lens and diffraction grating called the external cavity.
+	% Short Version
+	\subsubsection*{Corrective Measures}
+	We present here, a brief overview of known complications with saturated absorption spectroscopy and present our corrections to these complications. These complications include mode hopping, Doppler broadening, and crossover resonances within a saturated absorption spectrum. 
 	
-	Here, each of the 4 components helps to ``choose'' the frequency of the laser, the frequency which all components agree on. In \cref{laserSpectrum}, the contribution from the medium corresponds to a wavelength range from $670$ nm to $671$ nm. The contribution from the grating feedback selects wavelengths in the neighborhood of $671$ nm, and the contribution from the external cavity acts as the ``fine tuning'' to the wavelength. Mode hops are discreet jumps in the wavelength of the laser due to changes in the various contributions to the wavelength, see \cref{modeHops}.
+	Mode hopping occurs when the various components of the laser are changed independently of one another. This results in spectral features which look like absorptions, but are actually due to the frequency selection of the laser, not absorption from a molecule. To correct for mode hopping, the components of the laser must all change simultaneously. This can be accomplished by coupling the amplitude of the laser, the ramp generator, and the piezo controller together as seen in \cref{Setup2}. 
 	
-	\begin{figure}[H]
-		\centering
-		\subfloat[caption]{\includegraphics[width=0.4\textwidth]{DiodeLaser/LaserFrequencySpectrum.PNG} \label{laserSpectrum}}
-		\qquad
-		\subfloat[caption]{\includegraphics[width=0.45\textwidth]{DiodeLaser/LaserModes1.png} \label{laserCavities} }
-		\caption{\red{caption}}
-		\label{LaserSpectrumCavity}
-	\end{figure}	
+	Doppler broadening is a result of atoms in the absorption chamber seeing the beam Doppler shifted into absorption. On the oscilloscope, this will result in a broadened peak around the absorption frequency. One way to eliminate Doppler broadening is performing saturated absorption spectroscopy, where two overlapping beams are sent through the absorption cell.
 	
-	\subsubsection*{Doppler Broadening}
-	Doppler broadening is the broadening of a signal due to the relative velocity of the atoms interacting with the laser. For this experiment, we are sending a laser through a chamber of naturally occurring Rubidium, referred to as the absorption chamber, and measuring the absorption spectrum. The velocity of the gas inside the chamber follows a Maxwellian distribution, meaning some of the molecules are moving with or against the laser. It is precisely this because of this relative motion that some of the gas molecules see the laser red-shifted, or blue-shifted onto absorption. In other words, some of the atoms in the absorption chamber which are not eligible for absorption are Doppler shifted into absorption, giving a wider range of absorbed frequencies. This ``widening'' of the absorption frequency is what is known as Doppler broadening.
+	However, when saturated absorption is performed, the oscilloscope trace will show more absorption peaks than are physically possible. This is because some of the atoms may see only one of the beams Doppler shifted into absorption, and this single-beam absorption will appear as a peak directly in between two transitions. To correct for this effect, we argue that the outside peaks must be genuine transitions, and then look for peaks which lie directly between two other peaks.
 	
 	\subsubsection*{Saturated Absorption}
-	Saturated absorption spectroscopy reveals the hyperfine structure of Rubidium. More precisely, it resolves very fine absorption lines from a Doppler broadened signal in a two step process. To perform saturated absorption, the beam from the laser must be split into two, one weak and one strong beam. The weak beam, called the \emph{probe} beam, is sent through the Rubidium chamber into the photodiode. The strong beam, called the \emph{pump} beam, is aligned anti-parallel to the probe beam. The first step in saturated absorption involves the pump beam keeping the electrons in the substance perpetually excited. If the pump beam were measured, it would yield a Doppler broadened absorption spectrum just as before. Of those excited electrons, upon interacting with the probe beam, they will undergo stimulated emission. This is the second step in saturated absorption spectroscopy. This stimulated emission only occurs if the atoms see both lasers at an absorption frequency. In other words, if atoms are Doppler shifted into absorption by the pump beam, they will not undergo stimulated emission by the probe beam and thus do not contribute to the fine structure spectrum.
-	
-	\subsubsection*{Crossover Resonance}
-	\begin{wrapfigure}{l}{0.45\textwidth}
-		\includegraphics[width=0.4\textwidth]{Crossover/crossoverAnnotated.PNG}
-		\caption{Saturated absorption spectrum for an atom with a single ground state and two excited states displaying a crossover resonance.}
-		\label{crossover}
-	\end{wrapfigure}
-	
-	In saturated absorption measurements, one important effect must be accounted for called \emph{crossover resonances}. If we examine the saturated absorption spectrum of an atom with a single ground state and two excited states, we will find an absorption spectrum similar to \cref{crossover}. Contrary to intuition, we will find three peaks instead of two, corresponding to the two excited states. From the absorption spectrum, crossover resonances appear to represent genuine atomic transitions. However, they arise from interactions of the atoms with the pump and probe beams individually. The hallmark of saturated absorption measurements requires that atoms in the absorption cell see both beams in resonance with atomic transitions. However, there are also atoms which will see only one of the beams in resonance with a transition. So, atoms may absorb due to only the pump or only the probe beam, and this single-beam absorption is what causes crossover resonances. Consequently, one of the distinguishing features of crossover resonances is they will always be directly in between transitions.
+%		Saturated absorption spectroscopy reveals the hyperfine structure of Rubidium. More precisely, it resolves very fine absorption lines from a Doppler broadened signal in a two step process. To perform saturated absorption, the beam from the laser must be split into two, one weak and one strong beam. The weak beam, called the \emph{probe} beam, is sent through the Rubidium chamber into the photodiode. The strong beam, called the \emph{pump} beam, is aligned anti-parallel to the probe beam. The first step in saturated absorption involves the pump beam keeping the electrons in the substance perpetually excited. If the pump beam were measured, it would yield a Doppler broadened absorption spectrum just as before. Of those excited electrons, upon interacting with the probe beam, they will undergo stimulated emission. This is the second step in saturated absorption spectroscopy. This stimulated emission only occurs if the atoms see both lasers at an absorption frequency. In other words, if atoms are Doppler shifted into absorption by the pump beam, they will not undergo stimulated emission by the probe beam and thus do not contribute to the fine structure spectrum.
+
+	Saturated absorption spectroscopy reveals the hyperfine structure of Rubidium. More precisely, it resolves very fine absorption lines from a Doppler broadened signal in a two step process. In the first step, a weak \emph{probe beam} is sent through the absorption chamber into the photodiode. The probe beam simply serves to probe the absorption spectrum of the sample. If the spectrum from the probe beam were measured, it would be Doppler broadened just as before. The second step is to overlap a second, stronger \emph{pump beam} anti-parallel with the probe beam. When the two beams are overlapping and anti-parallel, the pump beam keeps the sample in the excited state, and the probe beams generates stimulated emission. However, this stimulated emission only occurs for atoms that see both lasers at an absorption frequency, which allows the fine spectral features to be resolved. In other words, if atoms are Doppler shifted into absorption by the pump beam, they will not undergo stimulated emission by the probe beam and do not contribute to the fine structure spectrum.
 	
 	\subsubsection*{Calibration}
+		
+		\begin{wrapfigure}{l}{0.5\textwidth}
+			\includegraphics[width=0.5\textwidth]{DiodeLaser/InterferometerScan.png}
+			\caption{Representative interferometer oscilloscope trace}
+			\label{interferometerScan}
+		\end{wrapfigure}
+		To quantify the scale of the horizontal axis on the oscilloscope, we must relate the frequency of the laser to the spacing on the oscilloscope. To do this, we use a \emph{Fabry-Perot interferometer}. This is an optical cavity of fixed length which acts as a filter, allowing only certain frequencies to pass through. Upon measuring the transmission intensity from the interferometer, we obtain a spectrum similar to \cref{interferometerScan}. Here, the spacing between each resonant peak is 
+		\begin{equation}
+			\Delta \lambda = \frac{\lambda^2}{2d}
+		\end{equation}
+		where $\lambda$ is the frequency of the laser and $d$ is the length of the interferometer. A simple conversion from wavelength to frequency allows us to determine the scale of the horizontal axis on the oscilloscope in terms of laser frequency. This calibration process has already been preformed, and we quote the result of $234 \ \text{MHz/ms}$.
 	
-	\begin{wrapfigure}{l}{0.5\textwidth}
-		\includegraphics[width=0.5\textwidth]{DiodeLaser/InterferometerScan.png}
-		\caption{Representative interferometer oscilloscope trace}
-		\label{interferometerScan}
-	\end{wrapfigure}
+	
 
-	To quantify the scale of the horizontal axis on the oscilloscope, we must relate the frequency of the laser to the spacing on the oscilloscope. To do this, we use a \emph{Fabry-Perot interferometer}. This is an optical cavity of fixed length which acts as a filter, allowing only certain frequencies to pass through. Upon measuring the transmission intensity from the interferometer, we obtain a spectrum similar to \cref{interferometerScan}. Here, the spacing between each resonant peak is 
-	\begin{equation}
-		\Delta \lambda = \frac{\lambda^2}{2d}
-	\end{equation}
-	where $\lambda$ is the frequency of the laser and $d$ is the length of the interferometer. A simple conversion from wavelength to frequency allows us to determine the scale of the horizontal axis on the oscilloscope in terms of laser frequency. This calibration process has already been preformed, and we quote the result of $234 \ \text{MHz/ms}$.
+% Long Version
+%	\subsubsection*{Mode Hopping}
+%	Mode hopping is an undesirable feature of diode lasers and produces very sharp, discontinuous jumps in spectral scans, see \cref{modeHopping}. The frequency of the laser beam is actually a combination of the frequencies allowed by the various parts of the laser, see \cref{LaserSpectrumCavity}. The parts which contribute to the frequency are $1)$.\ the material of the diode, $2)$.\ the physical size of the internal cavity in the diode, $3)$.\ the diffraction grating and $4)$.\ the separation between the collimating lens and diffraction grating called the external cavity.
+%	
+%	Here, each of the 4 components helps to ``choose'' the frequency of the laser, the frequency which all components agree on. \red{ In \cref{laserSpectrum} the grating feedback narrows the wavelength down to the neighborhood of $671$ nm. It is further ``fine tuned'' by the external cavity...} In \cref{laserSpectrum}, the contribution from the medium corresponds to a wavelength range from $670.6$ nm to $671.4$ nm. The contribution from the grating feedback selects wavelengths in the neighborhood of $671$ nm, and the contribution from the external cavity acts as the ``fine tuning'' to the wavelength. Mode hops are discreet jumps in the wavelength of the laser due to changes in the various contributions to the wavelength, see \cref{modeHops}.
+%	
+%	\begin{figure}[H]
+%		\centering
+%		\subfloat[\red{caption}]{\includegraphics[width=0.4\textwidth]{DiodeLaser/LaserFrequencySpectrum.PNG} \label{laserSpectrum}}
+%		\qquad
+%		\subfloat[\red{caption}]{\includegraphics[width=0.45\textwidth]{DiodeLaser/LaserModes1.png} \label{laserCavities} }
+%		\caption{\red{caption}}
+%		\label{LaserSpectrumCavity}
+%	\end{figure}	
+%	
+%	\subsubsection*{Doppler Broadening}
+%	Doppler broadening is the broadening of a signal due to the relative velocity of the atoms interacting with the laser. For this experiment, we are sending a laser through a chamber of naturally occurring Rubidium, referred to as the absorption chamber, and measuring the absorption spectrum. The velocity of the gas inside the chamber follows a Maxwellian distribution, meaning some of the molecules are moving with or against the laser. It is precisely this because of this relative motion that some of the gas molecules see the laser red-shifted, or blue-shifted onto absorption. In other words, some of the atoms in the absorption chamber which are not eligible for absorption are Doppler shifted into absorption, giving a wider range of absorbed frequencies. This ``widening'' of the absorption frequency is what is known as Doppler broadening.
+%	
+%	\subsubsection*{Saturated Absorption}
+%	Saturated absorption spectroscopy reveals the hyperfine structure of Rubidium. More precisely, it resolves very fine absorption lines from a Doppler broadened signal in a two step process. To perform saturated absorption, the beam from the laser must be split into two, one weak and one strong beam. The weak beam, called the \emph{probe} beam, is sent through the Rubidium chamber into the photodiode. The strong beam, called the \emph{pump} beam, is aligned anti-parallel to the probe beam. The first step in saturated absorption involves the pump beam keeping the electrons in the substance perpetually excited. If the pump beam were measured, it would yield a Doppler broadened absorption spectrum just as before. Of those excited electrons, upon interacting with the probe beam, they will undergo stimulated emission. This is the second step in saturated absorption spectroscopy. This stimulated emission only occurs if the atoms see both lasers at an absorption frequency. In other words, if atoms are Doppler shifted into absorption by the pump beam, they will not undergo stimulated emission by the probe beam and thus do not contribute to the fine structure spectrum.
+%	
+%	\subsubsection*{Crossover Resonance}
+%	\begin{wrapfigure}{l}{0.45\textwidth}
+%		\includegraphics[width=0.4\textwidth]{Crossover/crossoverAnnotated.PNG}
+%		\caption{Saturated absorption spectrum for an atom with a single ground state and two excited states displaying a crossover resonance.}
+%		\label{crossover}
+%	\end{wrapfigure}
+%	
+%	In saturated absorption measurements, one important effect must be accounted for called \emph{crossover resonances}. If we examine the saturated absorption spectrum of an atom with a single ground state and two excited states, we will find an absorption spectrum similar to \cref{crossover}. Contrary to intuition, we will find three peaks instead of two, corresponding to the two excited states. From the absorption spectrum, crossover resonances appear to represent genuine atomic transitions. However, they arise from interactions of the atoms with the pump and probe beams individually. The hallmark of saturated absorption measurements requires that atoms in the absorption cell see both beams in resonance with atomic transitions. However, there are also atoms which will see only one of the beams in resonance with a transition. So, atoms may absorb due to only the pump or only the probe beam, and this single-beam absorption is what causes crossover resonances. Consequently, one of the distinguishing features of crossover resonances is they will always be directly in between transitions.
+%	
+%	\subsubsection*{Calibration}
+%	
+%	\begin{wrapfigure}{l}{0.5\textwidth}
+%		\includegraphics[width=0.5\textwidth]{DiodeLaser/InterferometerScan.png}
+%		\caption{Representative interferometer oscilloscope trace}
+%		\label{interferometerScan}
+%	\end{wrapfigure}
+%
+%	To quantify the scale of the horizontal axis on the oscilloscope, we must relate the frequency of the laser to the spacing on the oscilloscope. To do this, we use a \emph{Fabry-Perot interferometer}. This is an optical cavity of fixed length which acts as a filter, allowing only certain frequencies to pass through. Upon measuring the transmission intensity from the interferometer, we obtain a spectrum similar to \cref{interferometerScan}. Here, the spacing between each resonant peak is 
+%	\begin{equation}
+%		\Delta \lambda = \frac{\lambda^2}{2d}
+%	\end{equation}
+%	where $\lambda$ is the frequency of the laser and $d$ is the length of the interferometer. A simple conversion from wavelength to frequency allows us to determine the scale of the horizontal axis on the oscilloscope in terms of laser frequency. This calibration process has already been preformed, and we quote the result of $234 \ \text{MHz/ms}$.
 	
 	
 	\subsection{Optical Setup}
-	We begin by configuring our laser bench according to \cref{Setup1} and the controller according to \cref{Controller1}. In this configuration, the beam is sent through filters to a $50/50$ beam splitter and then through the chamber containing the Rubidium. The resulting spectrum contains mode hopping, as seen in \cref{modeHopping} in the appendix. Adjusting the piezoelectric DC offset and current amplitude accordingly will eliminate this mode hopping.
+	We begin by configuring our laser bench according to \cref{Setup1} and the controller according to \cref{Controller1}. In this configuration, the beam is sent through filters to a $50/50$ beam splitter and then through the chamber containing the Rubidium. The resulting spectrum contains mode hopping, as seen in \cref{modeHopping} in the appendix.
+	Mode hopping can be eliminated by adjusting the piezoelectric DC offset and amplitude of the laser current accordingly.
 	
 	% Setup 1
 	\begin{figure}[H]
 		\centering
-		\subfloat[Caption A]{\includegraphics[width=0.4\textwidth]{Equipment/Setup1.png} \label{Setup1}}
+		\subfloat[Optical setup for absorption measurements with mode hopping]
+		{\includegraphics[width=0.4\textwidth]{Equipment/Setup1.png} \label{Setup1}}
 		\qquad
-		\subfloat[Caption B]{\includegraphics[width=0.4\textwidth]{Equipment/Controller1.png}}
+		\subfloat[Diode Laser Controller hookups for \protect\cref{Setup1}]{\includegraphics[width=0.4\textwidth]{Equipment/Controller1.png}}
 		\caption{Optical setup and controller hook ups for measurements with mode hopping.}
 		\label{Controller1}		
 	\end{figure}
@@ -299,7 +333,7 @@
 		\caption{Laser setup and controller hookups for obtaining the spectrum with the background subtracted out}
 	\end{figure}
 
-	
+	\pagebreak
 	
 	\begin{wrapfigure}{l}{0.5\textwidth}
 		\includegraphics[width=0.5\textwidth]{/Equipment/Setup3.png}
@@ -308,11 +342,9 @@
 	\end{wrapfigure}
 	
 	
-	
-	
 	To obtain the hyperfine structure of the two Rubidium isotopes, we configure the laser bench according to \cref{Setup3}. In this setup, the signal from photodiode $2$ is again subtracted from photodiode $1$. This time however, the signal from photodiode $1$ is saturated, which reveals the hyperfine structure after the subtraction.
 	
-	When aligning the beams, two considerations must be taken into account. First, it is crucial that the beams overlap as much as possible within the absorption chamber. The larger the overlap, the sharper the higher the saturated absorption peaks will appear on the oscilloscope. Second, it is important to check that after alignment, the pump beam is not being reflected off the $10/90$ beam splitter, back through the absorption cell and into either photodetector. This will result in unwanted background.
+	When aligning the beams, two considerations must be taken into account. First, it is crucial that the beams overlap as much as possible within the absorption chamber. The larger the overlap, the sharper the higher the saturated absorption peaks will appear on the oscilloscope. Second, it is important to check that after alignment the pump beam is not being reflected off the $10/90$ beam splitter, back through the absorption cell and into either photodetector. This will result in unwanted background.
 	
 	
 	
@@ -335,8 +367,9 @@
 	
 	\end{multicols}
 	
-	
-	\subsection{Hyperfine Structure Spectrum}	
+	\pagebreak
+	\subsection{Hyperfine Structure Spectrum}
+		
 	\begin{multicols}{2}
 	\begin{figure}[H]
 		\includegraphics[width=0.45\textwidth]{Hyperfine_Structure/AnnotatedHyperFineStructureSpectrum.JPG}
@@ -346,7 +379,7 @@
 	
 	\columnbreak
 	
-	After setting up the laser for saturated absorption, we can see a rough scan of the Hyperfine structure for both isotopes in \cref{HyperfineStructure}. The widened base is due to the imperfect subtraction of the two signals and the sharp peaks are the hyperfine transitions. \cref{85Hyper} and \cref{87Hyper} below show annotated scans of the hyperfine transitions after zooming into each peak. It is important to note the crossover resonances which lie directly in between atomic transitions.
+	After setting up the laser for saturated absorption, we can see a rough scan of the Hyperfine structure for both isotopes in \cref{HyperfineStructure}. The widened base is due to the imperfect subtraction of the two signals and the sharp peaks are the hyperfine transitions. \cref{85Hyper} and \cref{87Hyper} below show annotated scans of the hyperfine transitions after zooming into each peak. It is important to note the crossover resonances which lie directly in between atomic transitions. These appear to be features resulting from atomic absorption, but are generated from the process of saturated absorption spectroscopy and should be ignored.
 	\end{multicols}
 	
 % Rb85 Hyperfine Transistions
@@ -468,21 +501,25 @@
 	
 	\section{Conclusion}
 	
-	\subsection{Error}
-	The calibration for the laser was performed previously and we did not have time to perform one ourselves. It appears as if our energy measurements for the hyperfine splitting are about twice too high compared to the accepted values. This could be because we used the previous calibration setting instead of performing one ourselves.
+	\subsection{Accomplishments}
+	In this experiment, we successfully measured the fine structure splitting, hyperfine splitting, and Zeeman splitting between the ground state and the first excited state of \RbEF and $^{87}\text{Rb}$. For \RbEF and \RbES, we measure $\Delta E = 3320 \pm 117$ Hz and $\Delta E = 7930 \pm 117$ Hz. We also measure the hyperfine splitting for each isotope, summarized in \cref{Rb85Table,Rb87Table}. The Zeeman splitting measurements are recorded for the $F'=3$ peak within the $F=2$ peak of $^{87}\text{Rb}$. Finally, we measure the value of the Land\'e g-factor to be $g=0.337 \pm 0.0301$.
 	
-	When determining the transition energies, I printed oscilloscope traces and measured frequency differences by hand, unaided by a computer program. This introduced unneeded human error into the measurements. A better alternative utilizes computer image manipulation software like ImageJ to make precise measurements digitally.
+	\subsection{Error}
+
+	Due to time constraints, we were unable to perform the frequency calibration of the laser ourselves. It appears as if our energy measurements for the hyperfine splitting are about twice too high compared to the accepted values. One obvious reason could be due to quoting an incorrect calibration value. 
+	
+	When determining the transition energies, I printed oscilloscope traces and measured frequency differences by hand, unaided by a computer program. This introduced unneeded human error into the measurements. A better method utilizes computer image manipulation software like ImageJ to make precise measurements digitally.
 	
 	While measuring the magnetic field, it became very difficult to follow specific transition lines as the magnetic field increased. We suspect that in part, this is due to the poor quality of the oscilloscope. The trigger level was far too sensitive for fine adjustments and the oscilloscope trace was constantly fluctuating around the screen making it hard to follow specific peaks. To fix this, a higher quality oscilloscope is required.
 	
-	\subsection{Extensions - \red{Need more!}} 
-	Spectroscopy has many useful applications in astronomy.	For planets with atmospheres that pass in front of a star, the chemical composition of the atmosphere may be determined using a spectroscopic decomposition similar to this experiment. \redmark
+	\subsection{Extensions} 
+	Spectroscopy has many useful applications in astronomy.	For planets with atmospheres that pass in front of a star, the chemical composition of the atmosphere may be determined using a spectroscopic decomposition similar to this experiment.
 	
-	Saturated absorption spectroscopy allows signals ``hidden'' within a doppler-broadened peak to be resolved with fine detail. This technique can be applied measure the fine structure, and hyperfine structure constants. \redmark
+	Saturated absorption spectroscopy allows signals ``hidden'' within a doppler-broadened peak to be resolved with fine detail. This technique can be applied measure the fine structure, and hyperfine structure constants.
 	
 	\newpage
 	\include{appendix}
-	
+%	
 	\newpage
 	\bibliographystyle{utphys}
 	\bibliography{references}

@@ -1,80 +1,101 @@
 % General Paper Template created by Adam Green
-% Last revised 1/09/18
+% Last revised 3/2/18
 
 \documentclass[12pt]{article}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Standard packages
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standard Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsmath,amsfonts,amsthm,amssymb}
 \usepackage[margin = 2cm]{geometry}
-%\usepackage{siunitx}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Graphical packages
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graphical Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{float}
 \usepackage{tikz}
+\usepackage{wrapfig}
+% Syntax: \begin{wrapfig}[lineheight]{position}{width}
+
 %\usepackage{tikz-3dplot}
 %\usepackage{pgfplots}
 
 \graphicspath{{Figures/}} % set directory for figures
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Table and Array packages
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{tabu}
-\usepackage{booktabs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{xcolor}
 
+\definecolor{myblue1}{RGB}{76, 142, 185}
+\definecolor{myblue2}{RGB}{25, 100, 126}
+\definecolor{myblue3}{RGB}{41, 110, 180}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Citation packages
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{mygreen1}{RGB}{88,165,87}
+\definecolor{mygreen2}{RGB}{91,165,98}
+
+\definecolor{myred1}{RGB}{221, 28, 26}
+\definecolor{mypurple}{RGB}{122,48,108}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table and Array Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tabu}
+\usepackage{booktabs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Citation Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{hyperref}
-%\hypersetup{citebordercolor = {0 0.75 0.75}, linkbordercolor = {0 0.75 0.75} }
-\hypersetup{allcolors = {0 0.75 0.75}, allbordercolors = {0 0.75 0.75}, filecolor = {0 0.75 0.75}, linkbordercolor = {0 0.75 0.75} }
-\usepackage[capitalize]{cleveref}
+\hypersetup{allcolors = myblue1,
+	allbordercolors = myblue1, 
+	filecolor = myblue1, 
+	linkbordercolor = myblue1,
+	urlbordercolor = white
+}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{cleveref}
+\crefname{equation}{Eqn.}{Eqns.}
+\crefname{figure}{Fig.}{Figs.}
+\crefname{table}{Tab.}{Tabs.}
+
+%\usepackage{caption}
+%	\captionsetup{format = , justification= }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Text Formatting packages
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{multicol}
 \usepackage{parskip} 
 \usepackage{indentfirst} 
-	\setlength{\parindent}{14pt}
+\setlength{\parindent}{0.75cm}
 \usepackage{fancyhdr}
 %	\pagestyle{fancy}
 \usepackage{enumerate}
 \usepackage{wrapfig}
 \usepackage{lipsum}
-\usepackage{caption}
-	\captionsetup{format=hang, justification = raggedright, singlelinecheck=false}
-	
+\usepackage{xhfill}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Custom Commands
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand{\deg}{^\circ} % Degree Symbol (only in math mode)
-\renewcommand{\vec}[1]{\mathbf{#1}} % boldface vectors
-
-\newcommand{\red}[1]{\textbf{\textcolor{red}{#1}}}
-\newcommand{\redline}{\textcolor{red}{\rule{\textwidth}{2.5pt} } }
-\newcommand{\redmark}{\textcolor{red}{\rule[1mm]{7mm}{1mm} }}
-
-\crefname{equation}{Eq.}{Eqs.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Red marks to get attention
+\newcommand{\red}[1]{\textbf{\textcolor{myred1}{#1}}} % Red Text
+\newcommand{\redmark}{\textcolor{myred1}{\rule{4mm}{4mm} }} % Red Dash
+\newcommand{\redline}{\noindent\xhrulefill{myred1}{3pt}} % Red Rule
 
 
-
-\newcommand{\scap}[1]{\textsc{\makeLowercase{#1}}} % Makes caps small so it doesnt SHOUT
-\newcommand{\Ylm}[2]{\mathrm{Y}^{#1}_{#2}} % Spherical Harmonics
-\newcommand{\crefrangeconjunction}{-}
+% Lowercase Captial Letters
+\newcommand{\scap}[1]{\textsc{\MakeLowercase{#1}}} % Makes caps small so it doesnt SHOUT
 
 
-% Math commands, first and second order partials, Laplacian
+% Math Commands: first and second order partials, Laplacian
 \newcommand{\evaluate}{\Bigr\rvert}
 \newcommand{\ppd}[1]{\frac{\partial}{\partial#1}}
 \newcommand{\ppsd}[1]{\frac{\partial^2}{\partial #1^2}}
@@ -88,12 +109,12 @@
 \newcommand{\bracket}[2]{\langle #1 | #2 \rangle}
 
 % Redfine equation and figure references to include "Eqn. ()" and "Fig. _"
-\newcommand{\figref}[1]{Fig.\ \ref{#1}}
-\let\originaleqref=\eqref
-\renewcommand{\eqref}{Eqn.\ \originaleqref}
+%\newcommand{\figref}[1]{Fig.\ \ref{#1}}
+%\let\originaleqref=\eqref
+%\renewcommand{\eqref}{Eqn.\ \originaleqref}
 
 
-% Custom matrix spacing
+% Custom Matrix Spacing
 % Syntax: \begin{matrix}[scale]
 \makeatletter
 \renewcommand*\env@matrix[1][\arraystretch]{%
@@ -103,8 +124,20 @@
 	\array{*\c@MaxMatrixCols c}}
 \makeatother
 
-\newcommand{\email}[1]{\href{mailto:#1}{#1}}
+
+% Email Commands: Taken from Flip
+% Syntax: \email{email}
+\newcommand{\email}[1]{\href{mailto:#1}{\textcolor{mygreen1}{#1}}}
+
+% Institution Environment: Taken From Flip
 \newenvironment{institutions}[1][2em]{\begin{list}{}{\setlength\leftmargin{#1}\setlength\rightmargin{#1}}\item[]}{\end{list}}
+
+% Link to External Webpage
+% Syntax: \link{url}
+\newcommand{\link}[1]{\href{#1}{\textcolor{mygreen1}{\texttt{#1}}}}
+
+
+\newcommand{\Ylm}[2]{\mathbb{Y}^{#1}_{#2}}
 
 
 \begin{document}
@@ -200,7 +233,6 @@ The radial solution $\mathrm{R}(r)$ satisfies:
 \end{equation}
 
 
-
 We will now shift our attention to the spherical acoustic resonator which contains a pressure wave $\rho$ whose time-evolution is described by the wave equation:
 \begin{equation}
 	\label{waveEqn1}
@@ -241,7 +273,7 @@ where the entire angular dependence of the pressure wave is contained in the sph
 	\subsection{Experiment Setup}
 %	This experiment utilized the \emph{Quantum Analogs Controller} seen in \figref{QAController}. The ``Sine Wave Input'' on the controller is connected to the signal generator and provides the frequency of the signal inside the cavity. The ``Speaker Output'' is connected to the speaker on the cavity. The microphone from the cavity is connected to the ``Microphone Input'' on the device. This reads the signal from the cavity into the controller. The ``A/C Monitor'' port is connected to channel 2 on our oscilloscope. This is the output of the microphone from inside the cavity. Finally, we connect the ``Detector Output'' on the controller to a multimeter set to read DC voltage. The controller converts the AC microphone signal to its envelope and outputs it as a DC signal to ``Detector Output.'' A full view of our lab bench can be used for reference in \figref{experiment}.
 
-	This experiment utilized the \emph{Quantum Analogs Controller} seen in \figref{QAController}. This device outputs the wave to the cavity and reads the input from the microphone. The equipment is connected according to the lab manual \cite{labManual} and a full view of our lab bench can be used for reference in \figref{experiment}.
+	This experiment utilized the \emph{Quantum Analogs Controller} seen in \cref{QAController}. This device outputs the wave to the cavity and reads the input from the microphone. The equipment is connected according to the lab manual \cite{labManual} and a full view of our lab bench can be used for reference in \cref{experiment}.
 	
 	
 	\subsection{Cavity Angles and Spherical Angles}
@@ -250,7 +282,7 @@ where the entire angular dependence of the pressure wave is contained in the sph
 		\label{alpha2theta}
 		\cos(\theta) = \frac{1}{2}\cos(\alpha) - \frac{1}{2}
 		\end{equation}
-	In the appendix, \figref{ThetaAlpha} shows the relation between cosine of the polar angle and the cavity angle. When the spherical symmetry is broken however, the system is quantized about the $\vec{z}$ axis perpendicular to the table, and the cavity angle is equal to the azimuthal angle $\varphi$.
+	In the appendix, \cref{ThetaAlpha} shows the relation between cosine of the polar angle and the cavity angle. When the spherical symmetry is broken however, the system is quantized about the $\vec{z}$ axis perpendicular to the table, and the cavity angle is equal to the azimuthal angle $\varphi$.
 	
 	\begin{figure}[H]
 		\captionsetup{justification = centering}
@@ -266,9 +298,9 @@ where the entire angular dependence of the pressure wave is contained in the sph
 %		\subsection{Acoustic Resonances of the Spherical Cavity}
 	
 	\subsection{Frequency Spectrum}
-%	Before we begin mapping out resonant frequencies, we need to find the frequency range where the cavity response is linear. We do this because the equations we seek to model are linear. To do this, we set the attenuation to maximum (10), $\alpha = 180 \deg$, and sweep the frequency from $1$ Hz to $\approx 8$ kHz in increments of $10$ Hz. The linear regime of the signal ranges from about $2$ kHz to $8$ kHz and is seen in \figref{LinRegime}. We use $10$ Hz increments simply to find the neighborhood of a resonance, as greater resolution is not required. After we found the linear regime, we lowered the attenuation to half (5.0) and obtained the spectrum of frequencies with clear resonances, see \figref{Raw50a180}. The two smaller peaks at $\approx 6.5$ kHz and $8$ kHz are products of cross talk, and thus not resonances.
+%	Before we begin mapping out resonant frequencies, we need to find the frequency range where the cavity response is linear. We do this because the equations we seek to model are linear. To do this, we set the attenuation to maximum (10), $\alpha = 180 \deg$, and sweep the frequency from $1$ Hz to $\approx 8$ kHz in increments of $10$ Hz. The linear regime of the signal ranges from about $2$ kHz to $8$ kHz and is seen in \cref{LinRegime}. We use $10$ Hz increments simply to find the neighborhood of a resonance, as greater resolution is not required. After we found the linear regime, we lowered the attenuation to half (5.0) and obtained the spectrum of frequencies with clear resonances, see \cref{Raw50a180}. The two smaller peaks at $\approx 6.5$ kHz and $8$ kHz are products of cross talk, and thus not resonances.
 	
-	Since the equations we are modeling are linear differential equations, we need to determine the frequency range where the cavity response is linear. We measure the frequency spectrum over the entire frequency range, with the attenuation on the Quantum Analogs device set to its maximum setting, and focus our attention to the region where the spectrum increases linearly. This linear regime of frequency response is between $2$ kHz to $8.1$ kHz and is shown in \figref{LinRegime}. Once we determine the linear regime of the signal, we fine tune the attenuation and speaker amplitude to maximize signal and minimize cross-talk. The frequency spectrum for $\alpha = 180\deg$ and $50\%$ attenuation can be seen in \figref{Raw50a180}. The two smaller peaks at $\approx 6.5$ kHz and $8$ kHz are products of cross talk, and thus not resonances.
+	Since the equations we are modeling are linear differential equations, we need to determine the frequency range where the cavity response is linear. We measure the frequency spectrum over the entire frequency range, with the attenuation on the Quantum Analogs device set to its maximum setting, and focus our attention to the region where the spectrum increases linearly. This linear regime of frequency response is between $2$ kHz to $8.1$ kHz and is shown in \cref{LinRegime}. Once we determine the linear regime of the signal, we fine tune the attenuation and speaker amplitude to maximize signal and minimize cross-talk. The frequency spectrum for $\alpha = 180\deg$ and $50\%$ attenuation can be seen in \cref{Raw50a180}. The two smaller peaks at $\approx 6.5$ kHz and $8$ kHz are products of cross talk, and thus not resonances.
 	
 	\begin{figure}[H]
 		\captionsetup{justification = justified}
@@ -305,9 +337,9 @@ where the entire angular dependence of the pressure wave is contained in the sph
 \section{Results and Analysis}
 	
 	\subsection{Determining Resonant Frequencies}
-	Once we restricted our attention to the linear regime, see \figref{Raw50a180}, we began isolating the resonant frequencies using the oscilloscope.
+	Once we restricted our attention to the linear regime, see \cref{Raw50a180}, we began isolating the resonant frequencies using the oscilloscope.
 	
-	On the oscilloscope, a resonance will appear as a sharp spike with amplitude about 5 or 6 times larger than the characteristic signal amplitude. Near a resonance, we fine tune the frequency in increments of $1$ Hz until the amplitude is maximized. It is important to note that denominations smaller than $1$ Hz are not discernible on the oscilloscope due to the limited resolution of the screen. A table summarizing the resonant frequencies and their nodal angles is provided in \figref{freqTable}. For a full summary of the acoustic amplitude vs polar angle measurements for all resonant frequencies, see \cref{2291Table,3679Table,4962Table,6202Table,7409Table} in the appendix. For the corresponding graphs of acoustic pressure versus polar angle, see \cref{2291Graph,3679Graph,4962Graph,6202Graph,7409Graph}.
+	On the oscilloscope, a resonance will appear as a sharp spike with amplitude about 5 or 6 times larger than the characteristic signal amplitude. Near a resonance, we fine tune the frequency in increments of $1$ Hz until the amplitude is maximized. It is important to note that denominations smaller than $1$ Hz are not discernible on the oscilloscope due to the limited resolution of the screen. A table summarizing the resonant frequencies and their nodal angles is provided in \cref{freqTable}. For a full summary of the acoustic amplitude vs polar angle measurements for all resonant frequencies, see \cref{2291Table,3679Table,4962Table,6202Table,7409Table} in the appendix. For the corresponding graphs of acoustic pressure versus polar angle, see \cref{2291Graph,3679Graph,4962Graph,6202Graph,7409Graph}.
 	
 	\begin{table}[H]
 		\captionsetup{justification = centering}
@@ -331,7 +363,7 @@ where the entire angular dependence of the pressure wave is contained in the sph
 		\label{angleSpectra}
 	\end{figure}
 
-	From \figref{angleSpectra}, as the cavity angle approaches $0\deg$, the resonance at $\approx6$ kHz starts large and drops off but the resonance at $\approx7.5$ kHz starts large, drops off, and then increases. This is due to the angular dependence of the spherical harmonics and specifically, the Legendre Polynomials. As the order of the polynomial increases, antinodes form closer and closer to $\cos(\theta) = 1$. In other words, the behavior of higher frequency resonances is more erratic near angles close to $\cos(\theta) = 1$, see the Legendre polynomials in \cref{L1,L2,L3,L4,L5} in the appendix. So as we vary the cavity angle from $40\deg$ to $0\deg$, some Legendre polynomials decrease while others increase.
+	From \cref{angleSpectra}, as the cavity angle approaches $0\deg$, the resonance at $\approx6$ kHz starts large and drops off but the resonance at $\approx7.5$ kHz starts large, drops off, and then increases. This is due to the angular dependence of the spherical harmonics and specifically, the Legendre Polynomials. As the order of the polynomial increases, antinodes form closer and closer to $\cos(\theta) = 1$. In other words, the behavior of higher frequency resonances is more erratic near angles close to $\cos(\theta) = 1$, see the Legendre polynomials in \cref{L1,L2,L3,L4,L5} in the appendix. So as we vary the cavity angle from $40\deg$ to $0\deg$, some Legendre polynomials decrease while others increase.
 
 
 %	\begin{figure}[H]
@@ -343,7 +375,6 @@ where the entire angular dependence of the pressure wave is contained in the sph
 		
 	
 	\subsection{Determining $\ell$ Values for each Resonance}
-	
 	Once we isolate the resonant frequencies, their corresponding $\ell$ values can be determined through a qualitative analysis. We will present two ways to achieve this. First, we compare graphs of the acoustic amplitude vs $\cos(\theta)$ to the Legendre polynomials. Since the acoustic amplitude is the analog of the wavefunction, the shape of the graphs should match. Second, we compare the polar plots of acoustic amplitude vs polar angle to the spherical harmonics. This time, the polar plots should match the shapes of the spherical harmonics.
 	
 	We begin by noting that for any quantum mechanical system, the wavefunction $\psi$ is an inherently imaginary quantity. We can only ever observe real quantities however. To extract any observable quantity from the wavefunction, we must take its amplitude $|\psi|^2$. For the Hydrogen atom, the wavefunction is proportional to the spherical harmonics $\Ylm{\ell}{m}$ and thus also proportional to the Legendre polynomials $\mathrm{P}_\ell(\cos(\theta))$. So, the graphs of acoustic amplitude vs $\cos(\theta)$ should match the magnitude of the Legendre polynomials from the amplitude of the wavefunction $|\mathrm{P}_\ell(\cos(\theta))|^2$. Similarly, polar plots of acoustic amplitude should match the real component of the spherical harmonics.
@@ -362,7 +393,7 @@ where the entire angular dependence of the pressure wave is contained in the sph
 	\end{figure}
 
 	
-	The distinguishing features of \figref{graph1} are the starting location at $\cos(\theta) = 0$ and the number of nodes. Since the amplitude starts relatively close to zero, and has $3$ nodes total, a qualitative comparison suggests that the $7409$ Hz resonance corresponds to $\ell=5$.
+	The distinguishing features of \cref{graph1} are the starting location at $\cos(\theta) = 0$ and the number of nodes. Since the amplitude starts relatively close to zero, and has $3$ nodes total, a qualitative comparison suggests that the $7409$ Hz resonance corresponds to $\ell=5$.
 	
 	
 	\begin{wraptable}[13]{l}{0.4\textwidth}
@@ -380,7 +411,7 @@ where the entire angular dependence of the pressure wave is contained in the sph
 	\subsubsection{Comparison to Spherical Harmonics}
 	To make a comparison to the spherical harmonics, we begin by mapping out how the acoustic amplitude varies as a function of cavity angle at each resonance. We set the angle on the cavity to $\alpha = 180 \deg$ and record the acoustic amplitude using the ``Measure wavefunction'' button on the computer. This process is repeated as $\alpha$ decreases from $180 \deg$ to $0 \deg$ in increments of $\alpha = 10\deg$.
 	
-	Once we obtain the polar amplitude plots, we may simply compare them to the real component of the spherical harmonics. \figref{SphCompare} below shows one such comparison. The remaining polar acoustic amplitude plots can be seen in \figref{polarGraphs} and their corresponding spherical harmonics in \figref{sphereHarm} in the Appendix. From this qualitative comparison, it is possible to determine the $\ell$ value for each resonance.
+	Once we obtain the polar amplitude plots, we may simply compare them to the real component of the spherical harmonics. \cref{SphCompare} below shows one such comparison. The remaining polar acoustic amplitude plots can be seen in \cref{polarGraphs} and their corresponding spherical harmonics in \cref{sphereHarm} in the Appendix. From this qualitative comparison, it is possible to determine the $\ell$ value for each resonance.
 	
 	\begin{figure}[H]
 		\centering
@@ -392,7 +423,7 @@ where the entire angular dependence of the pressure wave is contained in the sph
 	\end{figure}
 	
 	\subsection{$\ell=1$ Degeneracy}
-	Recall that a quantum system with angular momentum $\ell$ has a $(2\ell+1)$ degeneracy of states. It is possible to resolve these degeneracies by breaking the spherical symmetry of the cavity. We achieve this by introducing spacing rings into the cavity, simulating a magnetic field which introduces a quantization axis into the system. This symmetry-breaking process is visualized in \figref{degenResolution}, where we can observe the peak splitting as the spacing is increased. The two peaks that emerge are the $m=0$ and $m=\pm1$, which is still degenerate.
+	Recall that a quantum system with angular momentum $\ell$ has a $(2\ell+1)$ degeneracy of states. It is possible to resolve these degeneracies by breaking the spherical symmetry of the cavity. We achieve this by introducing spacing rings into the cavity, simulating a magnetic field which introduces a quantization axis into the system. This symmetry-breaking process is visualized in \cref{degenResolution}, where we can observe the peak splitting as the spacing is increased. The two peaks that emerge are the $m=0$ and $m=\pm1$, which is still degenerate.
 	
 	\begin{figure}[H]
 		\centering
@@ -407,7 +438,7 @@ where the entire angular dependence of the pressure wave is contained in the sph
 		\label{degenResolution}
 	\end{figure}
 
-	We may further investigate by examining polar plots of the amplitude to determine the magnetic quantum number $m$. \figref{9mmPolarliftedDegeneracy} shows the $\theta = 0$ projection of acoustic pressure vs. azimuthal angle $\varphi$ for a cavity with the maximal separation of $9$ mm. Azimuthal amplitude graphs for the $3$ mm and $6$ mm spacing rings can be seen in \figref{3mmliftedDegeneracy} and \figref{6mmliftedDegeneracy} in the appendix.
+	We may further investigate by examining polar plots of the amplitude to determine the magnetic quantum number $m$. \cref{9mmPolarliftedDegeneracy} shows the $\theta = 0$ projection of acoustic pressure vs. azimuthal angle $\varphi$ for a cavity with the maximal separation of $9$ mm. Azimuthal amplitude graphs for the $3$ mm and $6$ mm spacing rings can be seen in \cref{3mmliftedDegeneracy} and \cref{6mmliftedDegeneracy} in the appendix.
 	
 	\begin{figure}[H]
 		\centering
@@ -419,7 +450,7 @@ where the entire angular dependence of the pressure wave is contained in the sph
 	\end{figure}
 
 	By comparing these graphs to the spherical harmonics, we can resolve the $\ell=1$ state into $m=0$ and $m=\pm1$. 
-	The $m=\pm1$ states are still degenerate because they are symmetric under rotations in the azimuthal angle $\varphi$. This can be seen in the $\varphi=0$ projections of the spherical harmonics in \figref{L1M1Comparison}. The projection of \figref{sphHarml1m0} onto the $\theta = 0$ plane exactly recovers \figref{liftedDegeneracyL1M0}. Similarly, the projection of \figref{sphHarml1m1} onto the $\theta = 0$ plane exactly recovers \figref{liftedDegeneracyL1M1} up to rotations in $\phi$
+	The $m=\pm1$ states are still degenerate because they are symmetric under rotations in the azimuthal angle $\varphi$. This can be seen in the $\varphi=0$ projections of the spherical harmonics in \cref{L1M1Comparison}. The projection of \cref{sphHarml1m0} onto the $\theta = 0$ plane exactly recovers \cref{liftedDegeneracyL1M0}. Similarly, the projection of \cref{sphHarml1m1} onto the $\theta = 0$ plane exactly recovers \cref{liftedDegeneracyL1M1} up to rotations in $\phi$
 
 	\begin{figure}[H]
 		\centering
