@@ -1,3 +1,6 @@
-\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{}
+\providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{1}
+
+\bibitem{labManual}
+W.~Beyermann, {\em Noise Fundamentals Laboratory Manual}.
 
 \end{thebibliography}\endgroup

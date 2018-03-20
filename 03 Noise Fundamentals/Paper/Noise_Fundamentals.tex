@@ -143,11 +143,6 @@
 
 
 
-
-
-
-
-
 \begin{document}
 	\begin{center}
 		
@@ -178,7 +173,7 @@
 	\vspace{0.5cm}
 	
 	\begin{abstract}
-		In this experiment we utilize Johnson and shot noise to measure Boltzmann's constant and the fundamental electric charge. For Johnson noise, we find that the data obeys Nyquist's theorem and we measure the power spectral density against resistance and temperature. From these measurements we extract Boltzmann's constant to be \red{kb}. For shot noise, we measure the power spectral density against bandwidth and photodiode current. Similarly, we find that the data obeys the linear relationship predicted by Schottky's theorem. From this, we extract the fundamental electric charge to be \red{e}.
+		In this experiment we utilize Johnson and shot noise to measure Boltzmann's constant and the fundamental electric charge. For Johnson noise, we find that the data obeys Nyquist's theorem and we measure the power spectral density against resistance and temperature. From these measurements we extract Boltzmann's constant to be $3.27\times 10^{-23} \ \pm 9.96 \times 10^{-25} \ \text{J}\cdot \text{s}$. For shot noise, we measure the power spectral density against bandwidth and photodiode current. Similarly, we find that the data obeys the linear relationship predicted by Schottky's theorem. From this, we extract the fundamental electric charge to be $3.18\times 10^{-19} \ \pm 3.89 \times 10^{-20}$ C.
 	\end{abstract}
 	
 	\tableofcontents
@@ -303,7 +298,7 @@
 
 	From Nyquist's Theorem, \cref{nyquistEqn}, we can equate the slope to $4k_BT$ and extract Boltzmann's constant:
 	\begin{equation}
-		k_B = 1.00 \times 10^{-23} \pm 2.15\times 10^{-23}
+		k_B = 1.00 \times 10^{-23} \pm 5.96\times 10^{-25}
 	\end{equation}
 	
 	
@@ -337,7 +332,7 @@
 	
 	Equating the slopes of the best-fit lines to the corresponding factor in Nyquist's equation, \cref{nyquistEqn}, we obtain the values for Boltzmann's constant listed in \cref{BoltzmannTable}. Averaging these values and errors, yields:
 	\begin{equation}
-		k_B = 5.54 \times 10^{-23} \pm 5.56 \times 10 ^{-23}		
+		k_B = 5.54 \times 10^{-23} \pm 1.34 \times 10^{-24}		
 	\end{equation}
 
 	
@@ -374,20 +369,22 @@
 	\section{Conclusion}
 	
 	\subsubsection*{Accomplishments}
-	In this experiment we verify that Nyquist's theorem successfully predicts how Johnson noise depends on resistance and temperature. From this prediction, we are able to measure Boltzmann's constant to be \red{Kb}. Additionally, we also verify that Schottky's theorem successfully predicts how shot noise depends on bandwidth and photodiode current. From Schottky's theorem, we are able to measure the fundamental electric charge to be \red{e}.
+	In this experiment we verify that Nyquist's theorem successfully predicts how Johnson noise depends on resistance and temperature. From this prediction, we are able to measure Boltzmann's constant to be $3.27\times 10^{-23} \ \pm 9.96 \times 10^{-25} \ \text{J}\cdot \text{s}$. Additionally, we also verify that Schottky's theorem successfully predicts how shot noise depends on bandwidth and photodiode current. From Schottky's theorem, we are able to measure the fundamental electric charge to be $3.18\times 10^{-19} \ \pm 3.89 \times 10^{-20}$ C.
 	
 	\subsubsection*{Improvements and Future Experiments}
 	While measuring shot noise, we noticed that the voltage measurements are extremely sensitive to vibrations and especially talking. We did our best to minimize our talking, but we could not eliminate the ambient sound in the room. It would be interesting to repeat this experiment in an anechoic chamber to further reduce the literal background noise. 
 	
 	
+	
+	
 	\pagebreak
 	\include{appendix}
-%
-%	
-%	\pagebreak
-%	\bibliographystyle{utphys}
-%	\bibliography{references}
-%	\nocite{*}
+
+	
+	\pagebreak
+	\bibliographystyle{utphys}
+	\bibliography{references}
+	\nocite{*}
 
 	
 \end{document}

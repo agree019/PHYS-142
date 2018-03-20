@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  19 MAR 2018 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.7)  16 MAR 2018 20:09
 entering extended mode
-**./Noise_Fundamentals.tex
-(Noise_Fundamentals.tex
+**./CapstoneEvaluation.tex
+(CapstoneEvaluation.tex
 LaTeX2e <2017-04-15>
 Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -759,23 +759,26 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
 Package: xhfill 2011/05/14\ v 1.01\ modify width and color of hrulefill
 )
-(Noise_Fundamentals.aux (appendix.aux))
-\openout1 = `Noise_Fundamentals.aux'.
+("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(CapstoneEvaluation.aux)
+\openout1 = `CapstoneEvaluation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 146.
-LaTeX Font Info:    ... okay on input line 146.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -846,7 +849,7 @@ Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box74
-Package hyperref Info: Link coloring OFF on input line 146.
+Package hyperref Info: Link coloring OFF on input line 147.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -856,13 +859,13 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count171
 )
-LaTeX Info: Redefining \ref on input line 146.
-LaTeX Info: Redefining \pageref on input line 146.
-LaTeX Info: Redefining \nameref on input line 146.
+LaTeX Info: Redefining \ref on input line 147.
+LaTeX Info: Redefining \pageref on input line 147.
+LaTeX Info: Redefining \nameref on input line 147.
 
-(Noise_Fundamentals.out) (Noise_Fundamentals.out)
+(CapstoneEvaluation.out) (CapstoneEvaluation.out)
 \@outlinefile=\write4
-\openout4 = `Noise_Fundamentals.out'.
+\openout4 = `CapstoneEvaluation.out'.
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 176.
 
@@ -873,119 +876,40 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 176.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-(Noise_Fundamentals.toc)
-\tf@toc=\write5
-\openout5 = `Noise_Fundamentals.toc'.
+) [1
 
- [1
-
-{C:/Users/Adam Green/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<Figures/circuit1.png, id=84, 336.88359pt x 170.51202pt>
-File: Figures/circuit1.png Graphic file (type png)
-<use Figures/circuit1.png>
-Package pdftex.def Info: Figures/circuit1.png  used on input line 187. on input
- line 187.
-Package pdftex.def Info: Requested size: 200.19054pt x 101.32712pt on input lin
-e 187.
- [2 <./Figures/circuit1.png>] [3]
-<Figures/Apparatus.PNG, id=113, 494.59781pt x 485.94048pt>
-File: Figures/Apparatus.PNG Graphic file (type png)
-<use Figures/Apparatus.PNG>
-Package pdftex.def Info: Figures/Apparatus.PNG  used on input line 251. on inpu
-t line 251.
-Package pdftex.def Info: Requested size: 250.24199pt x 245.86142pt on input lin
-e 251.
-
-Overfull \hbox (0.12857pt too wide) in paragraph at lines 258--258
-[]\OT1/cmr/bx/n/14.4 Measuring John-son Noise 
- []
-
-[4 <./Figures/Apparatus.PNG>]
-<Figures/powerR.png, id=131, 847.66687pt x 473.51906pt>
-File: Figures/powerR.png Graphic file (type png)
-<use Figures/powerR.png>
-Package pdftex.def Info: Figures/powerR.png  used on input line 294. on input l
-ine 294.
-Package pdftex.def Info: Requested size: 400.38872pt x 223.65945pt on input lin
-e 294.
- [5]
-<Figures/TempGraph.PNG, id=148, 688.44704pt x 443.40656pt>
-File: Figures/TempGraph.PNG Graphic file (type png)
-<use Figures/TempGraph.PNG>
-Package pdftex.def Info: Figures/TempGraph.PNG  used on input line 311. on inpu
-t line 311.
-Package pdftex.def Info: Requested size: 400.38872pt x 257.87962pt on input lin
-e 311.
- [6 <./Figures/powerR.png>] [7 <./Figures/TempGraph.PNG>]
-<Figures/ShotBandwidth.PNG, id=173, 848.7961pt x 504.38437pt>
-File: Figures/ShotBandwidth.PNG Graphic file (type png)
-<use Figures/ShotBandwidth.PNG>
-Package pdftex.def Info: Figures/ShotBandwidth.PNG  used on input line 344. on 
-input line 344.
-Package pdftex.def Info: Requested size: 300.29344pt x 178.44585pt on input lin
-e 344.
-<Figures/ShotCurrent.PNG, id=174, 761.09344pt x 502.50235pt>
-File: Figures/ShotCurrent.PNG Graphic file (type png)
-<use Figures/ShotCurrent.PNG>
-Package pdftex.def Info: Figures/ShotCurrent.PNG  used on input line 351. on in
-put line 351.
-Package pdftex.def Info: Requested size: 300.29344pt x 198.26772pt on input lin
-e 351.
- [8 <./Figures/ShotBandwidth.PNG> <./Figures/ShotCurrent.PNG>]
-[9]
-\openout2 = `appendix.aux'.
-
- (appendix.tex
-<Figures/TVConversion.PNG, id=197, 676.02562pt x 499.8675pt>
-File: Figures/TVConversion.PNG Graphic file (type png)
-<use Figures/TVConversion.PNG>
-Package pdftex.def Info: Figures/TVConversion.PNG  used on input line 26. on in
-put line 26.
-Package pdftex.def Info: Requested size: 350.33727pt x 259.05545pt on input lin
-e 26.
- [10
-
- <./Figures/TVConversion.PNG>] [11]) [12]
-(Noise_Fundamentals.bbl) [13
-
+{C:/Users/Adam Green/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 390.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 390.
- (Noise_Fundamentals.aux (appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 390.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 390.
-Package rerunfilecheck Info: File `Noise_Fundamentals.out' has not changed.
-(rerunfilecheck)             Checksum: 30034F52FC0979683D8F6D0DD4A73E9F;732.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 390.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 194.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 194.
+
+(CapstoneEvaluation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 194.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 194.
+Package rerunfilecheck Info: File `CapstoneEvaluation.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 194.
  ) 
 Here is how much of TeX's memory you used:
- 20503 strings out of 493312
- 378860 string characters out of 3138882
- 571851 words of memory out of 3000000
- 23626 multiletter control sequences out of 15000+200000
- 13916 words of font info for 52 fonts, out of 3000000 for 9000
+ 20330 strings out of 493312
+ 375918 string characters out of 3138882
+ 568212 words of memory out of 3000000
+ 23536 multiletter control sequences out of 15000+200000
+ 10228 words of font info for 39 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,54p,806b,368s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmtt12.pfb>
-Output written on Noise_Fundamentals.pdf (13 pages, 2107259 bytes).
+ 55i,5n,54p,1075b,326s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10
+.pfb>
+Output written on CapstoneEvaluation.pdf (3 pages, 107169 bytes).
 PDF statistics:
- 293 PDF objects out of 1000 (max. 8388607)
- 66 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 60 PDF objects out of 1000 (max. 8388607)
+ 4 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
